@@ -1,7 +1,9 @@
+create folder then open git bash into that folder
+
 //setup
 git config --global user.name Kirtishil-14
 git config --global user.email kirtishilpatil14@gmail.com	
-git config --global color.ui auto
+//git config --global color.ui auto
 
 //first initalize 
 git init
