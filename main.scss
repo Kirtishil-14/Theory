@@ -1,0 +1,59 @@
+@import "mixin";
+@import "var";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// ----------------------------------------- 
+// 1 operators (+,-,/,*)
+// ----------------------------------------- 
+// 2 variables ($variable)
+// ----------------------------------------- 
+// 3 nesting
+// ----------------------------------------- 
+// 4 mixin
+// ----------------------------------------- 
+// 5 mixin with param
+// ----------------------------------------- 
+// 6 partial(create file with _)
+// ----------------------------------------- 
+
+
+.header {
+    width: 100vw;
+    height: 100vh;
+    @include flexprop;
+    background-color: $bg_color;
+
+    h1 {
+        color: rgb(25, 0, 255);
+        font-weight: 100+300;
+        @include fontSize(6rem);
+
+        &:hover {
+            color: rgb(255, 0, 212);
+        }
+
+        &::after {
+            content: " 1 ";
+        }
+    }
+
+    p {
+        color: rgb(25, 0, 255);
+        font-weight: 100 + 300;
+        @include fontSize(14px);
+
+        &:hover {
+            color: rgb(255, 0, 212);
+        }
+
+        &::after {
+            content: " 1 ";
+        }
+    }
+
+}
