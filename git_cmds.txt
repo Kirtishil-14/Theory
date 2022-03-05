@@ -1,0 +1,131 @@
+//setup
+git config --global user.name Kirtishil-14
+git config --global user.email kirtishilpatil14@gmail.com	
+git config --global color.ui auto
+
+//first initalize 
+git init
+
+git status
+
+//flow
+1.Untracked
+2.Staged
+3.Unmodified
+4.Modified
+5.Staged
+
+//add into staging area
+git add filename
+
+git status
+
+//first commit
+git commit
+press i then type initial commit msg
+press esc then :wq
+
+git status
+
+//add entire files
+git add -A
+
+//shortcut for commit
+git commit -m "message"
+
+//compare working directory files to last commit file
+git checkout filename
+
+//all files compare
+git checkout -f
+
+//display all commit
+git log
+
+//history - who changed what and when in file
+git blame filename
+
+//display only 5 commit
+git log -p -5
+
+//compare working directory to staging area
+git diff
+
+//compare last commit to staging area
+git diff --stage
+
+//directly add into commit without staging 
+git commit -a -m "skip staging area"
+
+//remove working directory and staging area 
+git rm filename
+
+//remove only from staging area
+git rm --cached filename
+
+//display status
+git status -s
+showing M
+first box staging area
+second box working directory
+
+//git ignore
+touch .gitignore
+files u dont want to be tracked,not pushed into repo
+open gitignore file and write filename u want to ignore
+
+//new branch
+git branch branchname
+
+//list branch
+git branch
+
+//switch between branches
+git checkout branchname
+
+//merge branches into master
+git merge branchname
+
+//crete branch and switch
+git checkout -b branchname 
+
+//remove branch
+git branch -d branchname
+
+//open github account private and copy remote command
+
+//display remote
+git remote
+
+//push into github
+git push origin master
+
+//read/write access
+1.settings
+2.ssh nad gpg keys
+3.generating ssh keys
+4.generating new ssh key and adding it to the ssh-agent
+
+after copy pasting all ssh run command
+eval $(ssh-agent -s)
+
+//ssh add command
+
+last
+adding a new ssh key to your github account
+
+//cat then copy that data paste into add new ssh key
+
+then switch github into ssh copy that url run command
+git remote set-url origin paste that url
+git remote
+git remote -v
+git push -u origin master
+
+//push branch
+git push -u origin branchname
+
+//clone repo into local file
+git clone url foldername
+
+  

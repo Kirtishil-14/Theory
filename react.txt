@@ -1,0 +1,137 @@
+npx create-react-app@5.0.0 my-app
+
+first time -
+npx create-react-app myApp
+
+cd myApp
+
+npm start
+
+-----------------------------------
+delete some files from src folder-
+index.css 
+app.test.js 
+logo.svg
+reportWebVitals.js
+setupTests.js
+------------------------------------
+delete some files from public folder-
+logo.png
+-----------------------------------
+destructuring syntax----------------
+const user = { name: 'kirtishil', age: 24 }
+const { name, age } = user;
+// name = 'kirtishil, age = 24
+
+Destructuring also works on arrays, only it uses index instead of object keys:
+const numbers = [1, 2, 3, 4, 5];
+const [one, two] = numbers; // one = 1, two = 2
+const [fruit1 ,,,, fruit5] = fruits;
+
+const Susan = {
+  firstName: "Susan",
+  lastName: "Steward",
+  age: 14,
+  hobbies: {
+    hobby1: "singing",
+    hobby2: "dancing"
+  }
+};
+
+const {firstName, age, hobbies:{hobby1}} = Susan;
+console.log(firstName, age, hobby1); //"Susan" 14 "singing"
+
+function individualData({firstName, age, hobbies:{hobby1}}){
+  console.log(firstName, age, hobby1); //"Susan" 14 "singing"
+}
+individualData(Susan);
+--------------------
+
+The reduce method, which takes a function with two arguments(accumulator and item).We can also return the total number of all the array items using the reduce method
+const numbers = [1, 2, 3];
+const mySum = numbers.reduce((accumulator, num) => accumulator + num) // returns: 6.
+
+let staffs = [
+  { name: "Susan", age: 14, salary: 100 },
+  { name: "Daniel", age: 16, salary: 120 },
+  { name: "Bruno", age: 56, salary: 400 },
+  { name: "Jacob", age: 15, salary: 110 },
+  { name: "Sam", age: 64, salary: 500 },
+  { name: "Dave", age: 56, salary: 380 },
+  { name: "Neils", age: 65, salary: 540 }
+];
+
+const totalSalary = staffs.reduce((total, staff) => {
+  total += staff.salary;
+  return total;
+},0)
+console.log(totalSalary); // 2150
+
+const salaryInfo = staffs.reduce(
+  (total, staff) => {
+    let staffTithe = staff.salary * 0.1;
+    total.totalTithe += staffTithe;
+    total['totalSalary'] += staff.salary;
+    return total;
+  },
+  { totalSalary: 0, totalTithe: 0 }
+);
+
+console.log(salaryInfo); // { totalSalary: 2150 , totalTithe: 215 }
+------------------------------------
+function holdTillResponse() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+}
+
+async function mainFun() {
+  console.log('calling');
+  const result = await holdTillResponse();
+  console.log(result);
+  //under this line will execute after above result
+  console.log(111);
+  // expected output: "resolved"
+}
+
+mainFun();
+
+destructuring------
+for object-----------
+const vehicleOne = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red'
+}
+
+myVehicle(vehicleOne);
+
+function myVehicle({type, color, brand, model}) {
+  const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+}
+
+nested object---------
+const vehicleOne = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red',
+  registration: {
+    city: 'Houston',
+    state: 'Texas',
+    country: 'USA'
+  }
+}
+
+myVehicle(vehicleOne)
+
+function myVehicle({ model, registration: { state } }) {
+  const message = 'My ' + model + ' is registered in ' + state + '.';
+}
+
+----------------------------
