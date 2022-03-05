@@ -124,6 +124,9 @@ git remote
 git remote -v
 git push -u origin master
 
+after this just use (-u only push in whatever origin defined)
+git push
+
 //push branch
 git push -u origin branchname
 
