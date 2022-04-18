@@ -2,21 +2,20 @@
 //foreach
 var arrr = [2, 4, 6, 7, 8];
 arrr.forEach(function (item, index, array) {
-    console.log(item, index)
-})
+  console.log(item, index);
+});
 
 //copy array
 let copy1 = arrr.slice();
 let copy2 = Array.from(arrr);
 let copy3 = JSON.parse(JSON.stringify(arrr));
 
-
 let arr = ["1", "Test User", "25", "Developer"];
 let arr1 = [
-    ["id", "1"],
-    ["name", "Test User"],
-    ["age", "25"],
-    ["profession", "Developer"],
+  ["id", "1"],
+  ["name", "Test User"],
+  ["age", "25"],
+  ["profession", "Developer"],
 ];
 
 //Method 1: Using Object.assign() method
@@ -25,7 +24,7 @@ console.log(Object.assign({}, arr));
 
 // Method 2 Using Spread operator
 console.log({
-    ...arr
+  ...arr,
 });
 //{0: "1", 1: "Test User", 2: "25", 3: "Developer"}
 
@@ -35,10 +34,10 @@ console.log(Object.fromEntries(arr1));
 
 //Object
 let obj = {
-    id: "1",
-    name: "Test User",
-    age: "25",
-    profession: "Developer"
+  id: "1",
+  name: "Test User",
+  age: "25",
+  profession: "Developer",
 };
 
 //Method 1: Convert the keys to Array using - Object.keys()
@@ -55,372 +54,348 @@ console.log(Object.entries(obj));
 
 //functions
 function prime() {
-    const num = parseInt(prompt('enter numbr '))
-    let isprime = true
-    if (num > 1) {
-        for (let i = 2; i < num; i++) {
-            if (num % i == 0) {
-                isprime = false
-                break
-            }
-        }
-        if (isprime == true)
-            console.log('prime number')
-        else
-            console.log('not prime number')
+  const num = parseInt(prompt("enter numbr "));
+  let isprime = true;
+  if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i == 0) {
+        isprime = false;
+        break;
+      }
     }
-    else {
-        console.log('not prime number')
-    }
+    if (isprime == true) console.log("prime number");
+    else console.log("not prime number");
+  } else {
+    console.log("not prime number");
+  }
 }
 
 function factorial(no, type) {
-    if (type == 'with') {
-        if (no === 0) {
-            return 1;
-        }
-        return no * factorial(no - 1);
-    } else if (type == 'without') {
-
-        let fact = 1;
-        for (i = 1; i <= no; i++) {
-            fact = fact * i;
-        }
-        console.log(`the factorial of ${no} is ${fact}`)
-
+  if (type == "with") {
+    if (no === 0) {
+      return 1;
     }
-
+    return no * factorial(no - 1);
+  } else if (type == "without") {
+    let fact = 1;
+    for (i = 1; i <= no; i++) {
+      fact = fact * i;
+    }
+    console.log(`the factorial of ${no} is ${fact}`);
+  }
 }
 
 function armstrong(n) {
-    const b = parseInt(prompt('enter number'));
-    let sum = 0;
-    let temp = b;
-    while (temp > 0) {
-        let rem = temp % 10
-        sum = sum + rem * rem * rem
-        temp = parseInt(temp / 10)
-    }
-    if (sum == b)
-        console.log('armstrong number');
-    else
-        console.log('not armstrong');
+  const b = parseInt(prompt("enter number"));
+  let sum = 0;
+  let temp = b;
+  while (temp > 0) {
+    let rem = temp % 10;
+    sum = sum + rem * rem * rem;
+    temp = parseInt(temp / 10);
+  }
+  if (sum == b) console.log("armstrong number");
+  else console.log("not armstrong");
 
-
-    let strN = n + '';
-    let power = strN.length;
-    let sum1 = 0;
-    for (let i = 0; i < strN.length; i++) {
-        sum1 += Math.pow(Number(strN[i]), power);
-    }
-    return sum1 === n;
-
+  let strN = n + "";
+  let power = strN.length;
+  let sum1 = 0;
+  for (let i = 0; i < strN.length; i++) {
+    sum1 += Math.pow(Number(strN[i]), power);
+  }
+  return sum1 === n;
 }
 
 function fibonacci() {
-    const c = parseInt(prompt('enter number'))
-    let n1 = 0, n2 = 1, n3
-    for (i = 1; i <= c; i++) {
-        console.log(n1)
-        n3 = n1 + n2;
-        n1 = n2
-        n2 = n3
-    }
+  const c = parseInt(prompt("enter number"));
+  let n1 = 0,
+    n2 = 1,
+    n3;
+  for (i = 1; i <= c; i++) {
+    console.log(n1);
+    n3 = n1 + n2;
+    n1 = n2;
+    n2 = n3;
+  }
 }
 
 function palindrome(type) {
-    if (type == 'str') {
-        var a = "Kirtishil"
-        var b = a.split('').reverse().join('')
-        if (a === b)
-            console.log('palin')
-        else
-            console.log('not palin')
+  if (type == "str") {
+    var a = "Kirtishil";
+    var b = a.split("").reverse().join("");
+    if (a === b) console.log("palin");
+    else console.log("not palin");
 
-
-        function palin(str) {
-            let reversed = ``;
-            for (let i = 0; i < str.length; i++) {
-                reversed = str[i] + reversed;
-            }
-            return str === reversed ? `It's a palindrome` : `It's not a palindrome`;
-        }
-
-        function palin(str) {
-            let isPalindrome = true;
-            for (let a = 0, b = str.length - 1; a <= b; a++, b--) {
-                if (str[a] !== str[b]) {
-                    isPalindrome = false
-                }
-            }
-            return isPalindrome ? "It's a palindrome" : "It's not a palindrome";
-        }
-
-        let word = "CivIc";
-        let str = word.toLowerCase();
-
-        function checkPalindrome(str) {
-            // find the length of the string
-            const len = str.length;
-            // loop through half of the string
-            for (let i = 0; i < len / 2; i++) {
-                // check each position
-                // between the first and the last character
-                if (str[i] !== str[len - 1 - i]) {
-                    console.log("NOT a palindrome");
-                }
-            }
-            console.log("The string is a palindrome");
-        }
-
-
-    } else if (type == 'num') {
-        var a = parseInt(prompt('enter number'))
-        var temp = a
-        let rem, rev = 0
-        while (temp > 0) {
-            rem = temp % 10
-            rev = rev * 10 + rem
-            temp = parseInt(temp / 10)
-        }
-        if (rev == a)
-            console.log('palin')
-        else
-            console.log('not palin');
-    } else if (type == 'arr') {
-        let palindromeArray = (arr) => {
-            //initialize to true
-            let isPalindrome = true;
-
-            //loop through half length of the array
-            for (let i = 0; i < arr.length / 2; i++) {
-
-                //check if first half is equal to the second half
-                if (arr[i] !== arr[arr.length - i - 1]) {
-                    isPalindrome = false;
-                    break;
-                }
-            }
-
-            return isPalindrome;
-        }
-        console.log(palindromeArray([1, 2, 1]))
-
-
-        console.log(checkPalindrome([1, 3, 5, 3, 1]));
-
-        function checkPalindrome(arr) {
-            const len = arr.length;
-            if (len % 2 == 0) return false;
-
-            for (let i = 0; i < len / 2; i++) {
-                if (arr[i] !== arr[len - i - 1]) return false;
-            }
-            return true;
-        }
+    function palin(str) {
+      let reversed = ``;
+      for (let i = 0; i < str.length; i++) {
+        reversed = str[i] + reversed;
+      }
+      return str === reversed ? `It's a palindrome` : `It's not a palindrome`;
     }
+
+    function palin(str) {
+      let isPalindrome = true;
+      for (let a = 0, b = str.length - 1; a <= b; a++, b--) {
+        if (str[a] !== str[b]) {
+          isPalindrome = false;
+        }
+      }
+      return isPalindrome ? "It's a palindrome" : "It's not a palindrome";
+    }
+
+    let word = "CivIc";
+    let str = word.toLowerCase();
+
+    function checkPalindrome(str) {
+      // find the length of the string
+      const len = str.length;
+      // loop through half of the string
+      for (let i = 0; i < len / 2; i++) {
+        // check each position
+        // between the first and the last character
+        if (str[i] !== str[len - 1 - i]) {
+          console.log("NOT a palindrome");
+        }
+      }
+      console.log("The string is a palindrome");
+    }
+  } else if (type == "num") {
+    var a = parseInt(prompt("enter number"));
+    var temp = a;
+    let rem,
+      rev = 0;
+    while (temp > 0) {
+      rem = temp % 10;
+      rev = rev * 10 + rem;
+      temp = parseInt(temp / 10);
+    }
+    if (rev == a) console.log("palin");
+    else console.log("not palin");
+  } else if (type == "arr") {
+    let palindromeArray = (arr) => {
+      //initialize to true
+      let isPalindrome = true;
+
+      //loop through half length of the array
+      for (let i = 0; i < arr.length / 2; i++) {
+        //check if first half is equal to the second half
+        if (arr[i] !== arr[arr.length - i - 1]) {
+          isPalindrome = false;
+          break;
+        }
+      }
+
+      return isPalindrome;
+    };
+    console.log(palindromeArray([1, 2, 1]));
+
+    console.log(checkPalindrome([1, 3, 5, 3, 1]));
+
+    function checkPalindrome(arr) {
+      const len = arr.length;
+      if (len % 2 == 0) return false;
+
+      for (let i = 0; i < len / 2; i++) {
+        if (arr[i] !== arr[len - i - 1]) return false;
+      }
+      return true;
+    }
+  }
 }
 
 function bubbleSort() {
-    arr = [32, 12, 54, 23];
-    temp = 0;
-    n = arr.length;
-    for (i = 0; i < n; i++) {
-        for (j = 1; j < (n - i); j++) {
-            if (arr[j - 1] > a[j]) {
-                temp = arr[j - 1];
-                arr[j - 1] = a[j];
-                arr[j] = temp;
-            }
-        }
+  arr = [32, 12, 54, 23];
+  temp = 0;
+  n = arr.length;
+  for (i = 0; i < n; i++) {
+    for (j = 1; j < n - i; j++) {
+      if (arr[j - 1] > a[j]) {
+        temp = arr[j - 1];
+        arr[j - 1] = a[j];
+        arr[j] = temp;
+      }
     }
+  }
 }
 
 function minMax() {
-    array = [50, 60, 20, 10, 40];
-    minValue = Infinity;
-    maxValue = -Infinity;
+  array = [50, 60, 20, 10, 40];
+  minValue = Infinity;
+  maxValue = -Infinity;
 
-    for (item of array) {
-        // find minimum value
-        if (item < minValue)
-            minValue = item;
+  for (item of array) {
+    // find minimum value
+    if (item < minValue) minValue = item;
 
-        // find maximum value
-        if (item > maxValue)
-            maxValue = item;
-    }
+    // find maximum value
+    if (item > maxValue) maxValue = item;
+  }
 }
 
 function maxOccureance() {
+  const maxChar1 = (str) => {
+    const myStr = str.toLowerCase();
+    const charMap = {};
+    let max = 0;
+    let maxChar = "";
 
-    const maxChar1 = str => {
-        const myStr = str.toLowerCase();
-        const charMap = {};
-        let max = 0;
-        let maxChar = '';
-
-        for (let char of myStr) {
-            if (!charMap[char]) {
-                charMap[char] = 1;
-            } else {
-                charMap[char]++;
-            }
-        }
-
-        for (let char in charMap) {
-            if (charMap[char] > max) {
-                max = charMap[char];
-                maxChar = char;
-            }
-        }
-
-        return maxChar;
-    }
-    console.log(maxChar1("aasss"));
-
-
-
-    const str = 'helloyyyworld';  // input string
-    let max = 0; // variable to store the number of appearances of the max char so far
-    let maxChars = [];  //array to store to the max char(s) in case of multiple characters
-    const charCount = new Array(26).fill(0); // initialize a fixed sized array and fill it with zeros
-    // iterate over all the characters and add the count to charCount - just like a hash map
-    for (let i = 0; i < str.length; i++) {
-        const ch = str.charCodeAt(i) - 97; //97 is ASCII value of 'a'
-        charCount[ch]++;
-        if (charCount[ch] > max) {
-            maxChars = [str.charAt(i)];
-            max = charCount[ch];
-        } else if (charCount[ch] === max) maxChars.push(str.charAt(i));
-    }
-    console.log(maxChars.toString(), max);
-
-    function maxChar(str) {
-        const chars = {};
-        let max = 0;
-        let maxChar = '';
-        for (let char of str) {
-            if (!chars[char]) {
-                chars[char] = 1;
-            } else {
-                chars[char]++;
-            }
-        }
-        for (let char in chars) {
-            if (chars[char] > max) {
-                max = chars[char];
-                maxChar = char;
-            }
-        }
-        return maxChar;
+    for (let char of myStr) {
+      if (!charMap[char]) {
+        charMap[char] = 1;
+      } else {
+        charMap[char]++;
+      }
     }
 
-    maxChar("abcccccccd");
+    for (let char in charMap) {
+      if (charMap[char] > max) {
+        max = charMap[char];
+        maxChar = char;
+      }
+    }
+
+    return maxChar;
+  };
+  console.log(maxChar1("aasss"));
+
+  const str = "helloyyyworld"; // input string
+  let max = 0; // variable to store the number of appearances of the max char so far
+  let maxChars = []; //array to store to the max char(s) in case of multiple characters
+  const charCount = new Array(26).fill(0); // initialize a fixed sized array and fill it with zeros
+  // iterate over all the characters and add the count to charCount - just like a hash map
+  for (let i = 0; i < str.length; i++) {
+    const ch = str.charCodeAt(i) - 97; //97 is ASCII value of 'a'
+    charCount[ch]++;
+    if (charCount[ch] > max) {
+      maxChars = [str.charAt(i)];
+      max = charCount[ch];
+    } else if (charCount[ch] === max) maxChars.push(str.charAt(i));
+  }
+  console.log(maxChars.toString(), max);
+
+  function maxChar(str) {
+    const chars = {};
+    let max = 0;
+    let maxChar = "";
+    for (let char of str) {
+      if (!chars[char]) {
+        chars[char] = 1;
+      } else {
+        chars[char]++;
+      }
+    }
+    for (let char in chars) {
+      if (chars[char] > max) {
+        max = chars[char];
+        maxChar = char;
+      }
+    }
+    return maxChar;
+  }
+
+  maxChar("abcccccccd");
 }
 
 function arrSort() {
-    var a = [6, 3, 1, 2, 5, 87, 45, 3]
-    var len = a.length;
-    for (let i = 0; i < len - 1; i++) {
-        if (a[i] > a[i + 1]) {
-            let temp = a[i]
-            a[i] = a[i + 1]
-            a[i + 1] = temp
+  var a = [6, 3, 1, 2, 5, 87, 45, 3];
+  var len = a.length;
+  for (let i = 0; i < len - 1; i++) {
+    if (a[i] > a[i + 1]) {
+      let temp = a[i];
+      a[i] = a[i + 1];
+      a[i + 1] = temp;
 
-            i = -1
-        }
+      i = -1;
     }
-    console.log(a)
+  }
+  console.log(a);
 }
 
 function removeDuplicates(array) {
-    let unique = [...new Set(array)];
-    console.log(unique)
-    const arr = [1, 2, 3, 1, 2];
-    removeDuplicates(arr);
+  let unique = [...new Set(array)];
+  console.log(unique);
+  const arr = [1, 2, 3, 1, 2];
+  removeDuplicates(arr);
 }
 
 function merge(arr1, arr2) {
-    let arr = [...arr1, ...arr2];
-    let unique = [...new Set(arr)];
-    console.log(unique)
-    // const arr1 = [1, 2, 3]
-    // const arr2 = [3, 4, 5]
-    merge(arr1, arr2)
+  let arr = [...arr1, ...arr2];
+  let unique = [...new Set(arr)];
+  console.log(unique);
+  // const arr1 = [1, 2, 3]
+  // const arr2 = [3, 4, 5]
+  merge(arr1, arr2);
 }
 
 function binarySearch(sortedArray, key) {
-    let start = 0;
-    let end = sortedArray.length - 1;
+  let start = 0;
+  let end = sortedArray.length - 1;
 
-    while (start <= end) {
-        let middle = Math.floor((start + end) / 2);
+  while (start <= end) {
+    let middle = Math.floor((start + end) / 2);
 
-        if (sortedArray[middle] === key) {
-            // found the key
-            return middle;
-        } else if (sortedArray[middle] < key) {
-            // continue searching to the right
-            start = middle + 1;
-        } else {
-            // search searching to the left
-            end = middle - 1;
-        }
+    if (sortedArray[middle] === key) {
+      // found the key
+      return middle;
+    } else if (sortedArray[middle] < key) {
+      // continue searching to the right
+      start = middle + 1;
+    } else {
+      // search searching to the left
+      end = middle - 1;
     }
-    // key wasn't found
-    return -1;
+  }
+  // key wasn't found
+  return -1;
 
+  const binarySearch = (list, item) => {
+    let low = 0;
+    let high = list.length - 1;
 
-    const binarySearch = (list, item) => {
-        let low = 0
-        let high = list.length - 1
+    while (low <= high) {
+      const mid = Math.floor((low + high) / 2);
+      const guess = list[mid];
 
-        while (low <= high) {
-            const mid = Math.floor((low + high) / 2)
-            const guess = list[mid]
+      if (guess === item) {
+        return mid;
+      }
 
-            if (guess === item) {
-                return mid
-            }
-
-            if (guess > item) {
-                high = mid - 1
-            } else {
-                low = mid + 1
-            }
-        }
-
-        return null //if not found
-        console.log(binarySearch([1, 2, 3, 4, 5, 7, 8, 9], 5));
-
-
+      if (guess > item) {
+        high = mid - 1;
+      } else {
+        low = mid + 1;
+      }
     }
+
+    return null; //if not found
+    console.log(binarySearch([1, 2, 3, 4, 5, 7, 8, 9], 5));
+  };
 }
-
-
 
 //console
 console.log(!!null); //false
-console.log(!!''); //false
+console.log(!!""); //false
 console.log(!!1); //true
-console.log('1' - -'1'); //2
-console.log('1' + -'1'); //'1-1'
+console.log("1" - -"1"); //2
+console.log("1" + -"1"); //'1-1'
+console.log(null == undefined); //true
+console.log(null === undefined); //false
 
 //typeof
 console.log(typeof typeof 1); //string
-console.log(typeof (abc));
-console.log(typeof (String));
-console.log(typeof (Boolean));
-console.log(typeof ("Kirtishil"));
-console.log(typeof (358));
-console.log(typeof (NaN));
-console.log(typeof (false));
-console.log(typeof ([1, 2, 3]));
-console.log(typeof ({ name: "Kirtishil", age: 24 }));
+console.log(typeof abc);
+console.log(typeof String);
+console.log(typeof Boolean);
+console.log(typeof "Kirtishil");
+console.log(typeof 358);
+console.log(typeof NaN);
+console.log(typeof false);
+console.log(typeof [1, 2, 3]);
+console.log(typeof { name: "Kirtishil", age: 24 });
 console.log(new Date());
-console.log(function () { });
-console.log(typeof (null));
+console.log(function () {});
+console.log(typeof null);
 
 //arr
 const numbers = [1, 2, 3];
@@ -456,126 +431,134 @@ Math.ceil(11.51)
 */
 
 function strOp() {
-    var str = prompt("Enter string");
-    for (i = str.length; i > 0; i--) {
-        console.log(str.charAt(i - 1) + '');
+  var str = prompt("Enter string");
+  for (i = str.length; i > 0; i--) {
+    console.log(str.charAt(i - 1) + "");
+  }
+
+  //ES 5 Syntax Possible Solution:
+
+  function longestString1(arr) {
+    var longest = ""; // Step 0
+    for (var i = 0; i < arr.length; i++) {
+      // Step 1
+      if (arr[i].length > longest.length) {
+        // Step 2 & 3
+        longest = arr[i]; // Step 4
+      }
+    }
+    return longest; // Step 5
+  }
+
+  //ES 6 Syntax Possible Solution:
+
+  const longestString2 = (arr) => {
+    let longest = ""; // Step 0
+    arr.forEach((item) => {
+      // Step 1
+      if (item.length > longest.length) {
+        longest = item;
+      }
+    });
+    return longest; // Step 5
+  };
+
+  const countingChars = (str) => {
+    const charCount = {}; //Step 0
+    let maxCharCount = 0;
+    let maxChar = "";
+    for (let i = 0; i < str.length; i++) {
+      // Step 1.
+      charCount[str[i]] = ++charCount[str[i]] || 1;
     }
 
-
-    //ES 5 Syntax Possible Solution:
-
-    function longestString1(arr) {
-        var longest = ''; // Step 0
-        for (var i = 0; i < arr.length; i++) { // Step 1
-            if (arr[i].length > longest.length) { // Step 2 & 3
-                longest = arr[i]; // Step 4
-            }
-        }
-        return longest; // Step 5
+    for (let key in charCount) {
+      //Step 2
+      if (charCount[key] >= maxCharCount) {
+        maxCharCount = charCount[key]; //Step 3
+        maxChar = key;
+      }
     }
 
-    //ES 6 Syntax Possible Solution:
+    return maxChar; //Step 4
+  };
 
-    const longestString2 = (arr) => {
-        let longest = ''; // Step 0
-        arr.forEach((item) => { // Step 1
-            if (item.length > longest.length) {
-                longest = item;
-            }
-        });
-        return longest; // Step 5
+  const anagrams = (str1, str2) => {
+    if (str1.length !== str2.length) {
+      //step 1
+      return false;
+    }
+    let sort1 = str1.split("").sort(); // step 2
+    let sort2 = str2.split("").sort();
+    return sort1.join("") === sort2.join("");
+  };
+
+  const palindrome = (str) => {
+    let trimmed = str.replace(/[^\w]/g, "");
+    return trimmed === trimmed.split("").reverse().join(""); // Steps 1-4
+  };
+
+  const balancedbrackets = (str) => {
+    const stack = [];
+    let openers = ["{", "[", "("];
+    let closers = ["}", "]", ")"];
+
+    const dict = {
+      "{": "}",
+      "[": "]",
+      "(": ")",
     };
 
-    const countingChars = (str) => {
-        const charCount = {}; //Step 0
-        let maxCharCount = 0;
-        let maxChar = '';
-        for (let i = 0; i < str.length; i++) { // Step 1.
-            charCount[str[i]] = ++charCount[str[i]] || 1;
-        }
+    for (let i = 0; i < str.length; i++) {
+      let char = str[i];
+      if (openers.includes(char)) {
+        stack.push(char);
+      } else if (closers.includes(char)) {
+        //is our stack empty?
 
-        for (let key in charCount) { //Step 2
-            if (charCount[key] >= maxCharCount) {
-                maxCharCount = charCount[key] //Step 3
-                maxChar = key;
-            }
+        if (!stack.length) {
+          return false;
         }
-
-        return maxChar; //Step 4
+        //does our popped element not match the corresponding element?
+        else if (dict[stack.pop()] !== char) {
+          return false;
+        }
+      }
     }
 
-    const anagrams = (str1, str2) => {
-        if (str1.length !== str2.length) { //step 1
-            return false;
-        }
-        let sort1 = str1.split('').sort(); // step 2
-        let sort2 = str2.split('').sort();
-        return sort1.join('') === sort2.join('');
-    }
+    return stack.length === 0;
+  };
 
-    const palindrome = (str) => {
-        let trimmed = str.replace(/[^\w]/g, "");
-        return trimmed === trimmed.split('').reverse().join(''); // Steps 1-4
-    }
-
-    const balancedbrackets = (str) => {
-        const stack = [];
-        let openers = ["{", "[", "("];
-        let closers = ["}", "]", ")"];
-
-        const dict = {
-            "{": "}",
-            "[": "]",
-            "(": ")"
-        }
-
-        for (let i = 0; i < str.length; i++) {
-            let char = str[i];
-            if (openers.includes(char)) {
-                stack.push(char);
-            } else if (closers.includes(char)) {
-                //is our stack empty? 
-
-                if (!stack.length) {
-                    return false;
-                }
-                //does our popped element not match the corresponding element?
-                else if (dict[stack.pop()] !== char) {
-                    return false;
-                }
-            }
-        }
-
-        return stack.length === 0;
-
-    }
-
-    const sortObjects = (arr) => {
-        return arr.sort((a, b) => (a.population > b.population) ? 1 : -1);
-    }
-
+  const sortObjects = (arr) => {
+    return arr.sort((a, b) => (a.population > b.population ? 1 : -1));
+  };
 }
-
 
 // unsorted
 
 //how to pass object as param in function
 function checkAge(data) {
-    if (data === {
-        age: 18
-    }) {
-        console.log('You are an adult!');
-    } else if (data == {
-        age: 18
-    }) {
-        console.log('You are still an adult.');
-    } else {
-        console.log(`Hmm.. You don't have an age I guess`);
+  if (
+    data ===
+    {
+      age: 18,
     }
+  ) {
+    console.log("You are an adult!");
+  } else if (
+    data ==
+    {
+      age: 18,
+    }
+  ) {
+    console.log("You are still an adult.");
+  } else {
+    console.log(`Hmm.. You don't have an age I guess`);
+  }
 }
 
 checkAge({
-    age: 18
+  age: 18,
 });
 
 //Hmm.. You don't have an age I guess
@@ -585,13 +568,9 @@ The two objects that we are comparing don’t have that: the object we passed as
 This is why both { age: 18 } === { age: 18 } and { age: 18 } == { age: 18 } return false
 */
 
-
-
-
-
 // In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference.
 
-//(function(){ 
+//(function(){
 // immediately invoked function
 // })();
 
@@ -622,20 +601,18 @@ var x =[15,-4, 10, 12, -12, 10, -11, 23, 8372];
  }
  console.log(x);*/
 
-
-
 //check anagram
-var areAnagram = (str1, str2) => str1.toLowerCase().split('').sort().join('') === str2.toLowerCase().split('').sort().join('');
-
+var areAnagram = (str1, str2) =>
+  str1.toLowerCase().split("").sort().join("") ===
+  str2.toLowerCase().split("").sort().join("");
 
 ///////////////////////////////////////////////////
 
-const str = 'i have learned something new today';
+const str = "i have learned something new today";
 const arr2 = str.split(" ");
 
 for (var i = 0; i < arr2.length; i++) {
-    arr2[i] = arr2[i].charAt(0).toUpperCase() + arr2[i].slice(1);
-
+  arr2[i] = arr2[i].charAt(0).toUpperCase() + arr2[i].slice(1);
 }
 const str2 = arr2.join(" ");
 console.log(str2);
@@ -644,147 +621,145 @@ console.log(str2);
 
 // for...in iterates over property names, for...of iterates over property values:
 const arr3 = [3, 5, 7];
-arr3.foo = 'hello';
+arr3.foo = "hello";
 
 for (let i in arr3) {
-    console.log(i); // logs "0", "1", "2", "foo"
+  console.log(i); // logs "0", "1", "2", "foo"
 }
 
 for (let i of arr3) {
-    console.log(i); // logs 3, 5, 7
+  console.log(i); // logs 3, 5, 7
 }
 
 function FirstReverse(str) {
-    result = ""
-    for (i = 0; i < str.length; i++) {
-        result = str[i] + result
-    }
-    return result
+  result = "";
+  for (i = 0; i < str.length; i++) {
+    result = str[i] + result;
+  }
+  return result;
 }
-// keep this function call here 
-FirstReverse('kirtishil');
+// keep this function call here
+FirstReverse("kirtishil");
 
 function FirstReverse(str) {
-    var result = '';
-    for (var i = str.length - 1; i >= 0; i--) {
-        result += str.substring(i, i + 1);
-    }
-    // code goes here  
-    return result;
-
+  var result = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+    result += str.substring(i, i + 1);
+  }
+  // code goes here
+  return result;
 }
 
-// keep this function call here 
+// keep this function call here
 // to see how to enter arguments in JavaScript scroll down
-FirstReverse('kirtishil');
+FirstReverse("kirtishil");
 
 function FirstReverse(string) {
-    return string.split('').reverse().join('');
+  return string.split("").reverse().join("");
 }
 
-// keep this function call here 
-FirstReverse('kirtishil');
+// keep this function call here
+FirstReverse("kirtishil");
 
 function FirstFactorial(num) {
-    return (num === 1 ? 1 : num * FirstFactorial(num - 1));
+  return num === 1 ? 1 : num * FirstFactorial(num - 1);
 }
 
-// keep this function call here 
+// keep this function call here
 FirstFactorial(5);
 
 function LongestWord(sen) {
-    return sen.match(/w+/g).reduce((item, next) => item.length >= next.length ? item : next);
+  return sen
+    .match(/w+/g)
+    .reduce((item, next) => (item.length >= next.length ? item : next));
 }
 
-// keep this function call here 
-LongestWord('ddhjdsd dsds');
+// keep this function call here
+LongestWord("ddhjdsd dsds");
 
 function LongestWord(sen) {
-    var arr = sen.match(/[a-z]+/gi);
-    var sorted = arr.sort(function (a, b) {
-        return b.length - a.length;
-    });
-    // code goes here  
-    return sorted[0];
-
+  var arr = sen.match(/[a-z]+/gi);
+  var sorted = arr.sort(function (a, b) {
+    return b.length - a.length;
+  });
+  // code goes here
+  return sorted[0];
 }
 
-// keep this function call here 
-console.log(LongestWord('dsds dswsa'));
+// keep this function call here
+console.log(LongestWord("dsds dswsa"));
 
 function QuestionsMarks(str) {
-    res = false;
-    for (let i = 0; i < str.length; i++) {
-        for (let j = i + 1; j < str.length; j++) {
-            if (Number(str[i]) + Number(str[j]) === 10) {
-                res = true;
-                if (str.slice(i, j).split("?").length - 1 < 3) {
-                    return false;
-                }
-            }
+  res = false;
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j < str.length; j++) {
+      if (Number(str[i]) + Number(str[j]) === 10) {
+        res = true;
+        if (str.slice(i, j).split("?").length - 1 < 3) {
+          return false;
         }
+      }
     }
-    return res;
+  }
+  return res;
 }
 
-// keep this function call here 
-QuestionsMarks('kirtishil');
+// keep this function call here
+QuestionsMarks("kirtishil");
 
 function FindIntersection(strArr) {
+  const [a, b] = strArr.map((x) => x.split(",").map((x) => parseInt(x)));
+  const s = new Set(b);
 
-    const [a, b] = strArr.map(x => x.split(',').map(x => parseInt(x)));
-    const s = new Set(b);
-
-    return a.filter(x => s.has(x)).join(',') || 'false';
+  return a.filter((x) => s.has(x)).join(",") || "false";
 }
 
-// keep this function call here 
-console.log(FindIntersection(['dsdsf', 'dsfdss']));
+// keep this function call here
+console.log(FindIntersection(["dsdsf", "dsfdss"]));
 
 function FindIntersection(strArr) {
-    const list1 = strArr[0].split(", ");
-    const list2 = strArr[1].split(", ");
-    const test = list1.filter(val => list2.indexOf(val) !== -1);
-    return test.length ? test.join(",") : false;
+  const list1 = strArr[0].split(", ");
+  const list2 = strArr[1].split(", ");
+  const test = list1.filter((val) => list2.indexOf(val) !== -1);
+  return test.length ? test.join(",") : false;
 }
 
-// keep this function call here 
-console.log(FindIntersection(['dsgd', 'hghg']));
+// keep this function call here
+console.log(FindIntersection(["dsgd", "hghg"]));
 
 var arr4 = [1, 2, 5, 10, 20];
 var sum = arr4.reduce((a, i) => {
-    return a + i;
+  return a + i;
 });
 document.write(sum);
 
 var arr5 = [1, 2, 5, 10, 20];
 var sum = 0;
 for (let i in arr5) {
-    sum += arr5[i];
+  sum += arr5[i];
 }
 document.write(sum);
 
-
-var num = 5
+var num = 5;
 sq = 0;
 odd = 1;
 while (num > 0) {
-    sq += odd;
-    odd += 2;
-    num -= 1;
+  sq += odd;
+  odd += 2;
+  num -= 1;
 }
-console.log(sq)
+console.log(sq);
 
 //ui functions
 $("section").click(function () {
-    $(this).addClass("big-blue", 1000, "easeOutBounce");
+  $(this).addClass("big-blue", 1000, "easeOutBounce");
 });
 
-$('input[type=range]').on('click', function () {
-    console.log($(this).val());
+$("input[type=range]").on("click", function () {
+  console.log($(this).val());
 });
 
-// 
+//
 // splice and slice:
 var arr6 = [1, 2, 3, 5, 6];
 console.log(arr6.splice(3, 1));
@@ -794,37 +769,37 @@ console.log(arr6);
 // backtick:
 var fname = "Kirtishil";
 var lname = "Patil";
-console.log('Im' + fname + '' + lname);
+console.log("Im" + fname + "" + lname);
 console.log(`Im ${fname} ${lname}`);
 // regex:
 const regex = new RegExp(/^k.l$/);
-console.log(regex.test('kil'));
+console.log(regex.test("kil"));
 // Same reference
 let a = [1, 2, 3];
 let b = [1, 2, 3];
-console.log(a == b)// false
+console.log(a == b); // false
 
-console.log(a == "1,2,3")// true
+console.log(a == "1,2,3"); // true
 
 let c = a;
-console.log(c == a) //true
-console.log(c == b) //false
+console.log(c == a); //true
+console.log(c == b); //false
 
 let a1 = [10];
-let b = 10;
-console.log(a1 == b) // true
+let bc = 10;
+console.log(a1 == bc); // true
 // sum of all values from array
-var numbers = [3, 5, 7, 2];
-var sum = numbers.reduce((x, y) => x + y);
+var numbers2 = [3, 5, 7, 2];
+var sum = numbers2.reduce((x, y) => x + y);
 console.log(sum);
 // destructuring (swap values)
-a = 2, b = 4;
+(a = 2), (b = 4);
 [a, b] = [b, a];
 console.log(a, b); //4,2
 
 function total(num) {
-    return function (num2) {
-        return num + num2;
-    }
+  return function (num2) {
+    return num + num2;
+  };
 }
 total(5)(10);

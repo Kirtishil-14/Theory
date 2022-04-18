@@ -1,53 +1,53 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <title>Complete JS</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <title>Complete JS</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- insert logo into title -->
-    <link rel="icon" href="logo.jpg" type="image/jpg">
+        <!-- insert logo into title -->
+        <link rel="icon" href="logo.jpg" type="image/jpg">
 
-    <style>
-        /* box-sizing:border-box; */
+        <style>
+            /* box-sizing:border-box; */
 
-        html:focus-within {
-            scroll-behavior: smooth;
-        }
-
-        p {
-            /* display only 2 lines after that show tripple dots */
-            display: -webkit-box;
-            -webkit-line-clamp: 5;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            word-break: break-word;
-        }
-
-        .loader {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 10px solid;
-            border-color: #00ff87 #00422357;
-            animation: 1.5s spin infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
+            html:focus-within {
+                scroll-behavior: smooth;
             }
-        }
 
-        /* 3 ways to center div */
-        /* body {
+            p {
+                /* display only 2 lines after that show tripple dots */
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+            }
+
+            .loader {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 10px solid;
+                border-color: #00ff87 #00422357;
+                animation: 1.5s spin infinite;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* 3 ways to center div */
+            /* body {
               
             display: grid;
             place-items: center;
@@ -65,313 +65,313 @@
             
         } */
 
-        #box {
-            height: 200px;
-            width: 200px;
-            /* border: 15px solid transparent;
+            #box {
+                height: 200px;
+                width: 200px;
+                /* border: 15px solid transparent;
             padding: 15px;
             border-image: url(border.png) 30 round; */
 
-            border: 15px solid transparent;
-            padding: 15px;
-            border-image: url(border.png) 30 stretch;
+                border: 15px solid transparent;
+                padding: 15px;
+                border-image: url(border.png) 30 stretch;
 
-            display: grid;
-            place-items: center;
-        }
+                display: grid;
+                place-items: center;
+            }
 
-        p {
-            margin: 0;
-            padding: 0;
-        }
+            p {
+                margin: 0;
+                padding: 0;
+            }
 
-        /* media queries */
-        /* mobiles */
-        @media (max-width: 768px) {}
+            /* media queries */
+            /* mobiles */
+            @media (max-width: 768px) {}
 
-        @media(max-width: 468px) {}
+            @media(max-width: 468px) {}
 
-        /* tabs or ipads */
-        @media (min-width: 769px) and (max-width: 1023px) {}
+            /* tabs or ipads */
+            @media (min-width: 769px) and (max-width: 1023px) {}
 
-        /* desktops */
-        @media (min-width: 1024px) {}
-    </style>
-
-
-</head>
-
-<body>
-    <div class="ht-100 wt-100 p-5">
-        <br>
-        Theory
-        <h2>Html defines content of webpages</h2>
-        <h2>CSS to specify the layout of webpages</h2>
-        <h2>Javascript to program the behavior of webpages</h2>
-        <br>
-        <h4>HTML</h4>
-        <p>innerHTML:it will process an HTML tag if found in a string</p>
-        <p>innerText:it will not process an HTML tag if found in a string</p>
-        <p>
-            Block: always start on a new line. <br>
-            default block level:- div,img,section,form,nav <br>
-            Inline: take up space that is absolutely needed <br>
-            default inline level:- span,b,strong,a,input <br>
-        </p>
-
-        4<sub>4</sub>
-        4<sup>4</sup>
-
-        <p>target attributes:
-            <li>_self:open in same window</li>
-            <li>_blank:open in new window</li>
-            <li>_parent:open in parent frame</li>
-            <li>_top:open in full body window</li>
-        </p>
+            /* desktops */
+            @media (min-width: 1024px) {}
+        </style>
 
 
-        <br>
-        <h4>CSS</h4>
-        <p>querySelector: it returns the first element that matches the specified selectors. it is used to select
-            elements
-            using css selectors</p>
+    </head>
 
-        <p>
-            <strong>css: Inline css overrides internal css</strong><br>
-            <strong>Internal css overrides external css</strong><br>
-            <strong>External css overrides browser default css</strong><br>
-            It is like layers.The closer the style is to the element,the higher precedence it has.
-        </p>
+    <body>
+        <div class="ht-100 wt-100 p-5">
+            <br>
+            Theory
+            <h2>Html defines content of webpages</h2>
+            <h2>CSS to specify the layout of webpages</h2>
+            <h2>Javascript to program the behavior of webpages</h2>
+            <br>
+            <h4>HTML</h4>
+            <p>innerHTML:it will process an HTML tag if found in a string</p>
+            <p>innerText:it will not process an HTML tag if found in a string</p>
+            <p>
+                Block: always start on a new line. <br>
+                default block level:- div,img,section,form,nav <br>
+                Inline: take up space that is absolutely needed <br>
+                default inline level:- span,b,strong,a,input <br>
+            </p>
 
-        <br>
-        <h4>JS</h4>
-        <p>Js used for client side scripting as well as server side scripting.</p>
+            4<sub>4</sub>
+            4<sup>4</sup>
 
-        <br>
-        <p>How js works:</p>
-        first received by the js engine then inside js engine parser is used to check code for
-        syntatic
-        errors in line by line manner.<br>
-        After no error in code it creates the data structure called AST(Abstract
-        Syntax
-        Tree)<br>
-        Then js engine convert the js code into machine code. Last byte code get executed</p>
-        <br>
-        <p>window is the first thing that gets loaded in the browser. The document object is page that will be
-            loaded into
-            the browser. The document actually gets loaded inside window object.</p>
-        <p>window properties are:- document, history, screen, navigator, location</p>
-        <p>
-            window object is used to display popup dialog box(alert,confirm,prompt,open,close)
-            history object is used to switch to history pages(back,forward,go(number))
-        </p>
-        <br>
-        <p>Advantages of JS</p>
-        <ol>
-            <li>It separate html and code.</li>
-            <li>Cached js files can speed up page loads.</li>
-            <li>lightweight and interpreted programming language.</li>
-            <li>open and cross platform programming language.</li>
-            <li>Dynamically typed language : variable changes type dynamically.</li>
-        </ol>
-
-        <p>Variable</p>
-        <ol>
-            <li>var: Global Scope, updated and redeclare</li>
-            <li>let: Blocked scope, updated but not redeclare</li>
-            <li>const: Blocked scope, not updated and not redeclare</li>
-        </ol>
-
-        <p>Data Types</p>
-        <p>Primitive: store only single value</p>
-        string:"str"
-        number:123
-        undefined:undefined
-        boolean:true,false
-        null:null,Null
-        symbol:unique identifier used to store an anonymous and unique value <br>
-        <p>Non Primitive: store multiple value</p>
-        Array:
-        object: collection of data</p>
-
-        <br>
-        <p> Difference between rest and spread:</p>
-        Rest parameter is used to take variable number of arguments and turns into an array while Spread
-        operator takes
-        an array or an object and spreads it.
-        <br>Rest parameter is used in function declaration whereas Spread operator is used in function call
-        </p>
-
-        <br>
-        <p>Arrow function : It can only be used as a function expression</p>
-        var add = (a,b) => a+b;
-        var mul = (a) => a*2;
-
-        <br>
-        <p>Javascript Hoisting : It is js default behavior of moving declarations to the top. Always declare
-            variables at
-            the beginning of every scope</p>
-
-        <p>Closure: It is an inner function. It can access the outer veriable of function. To use closure simply
-            define
-            function inside another function and expose it.</p>
-
-        <p>Anonymous function: without having any name and wont do anything on their own. These are generally use
-            along with
-            an event handler</p>
-        <p>Js Callback: function passed to some method as a argument or option. It is a function that is to be
-            executed
-            after another function has finished executing</p>
-
-        <br>
-
-        <br>
-        <p>Slice: return the selected element in array as a new array object.It doesn't change the original array
-        </p>
-        <p>Splice: return the removed items in an array.It changes the original array</p>
-
-        <br>
-
-        <p>JSON.parse():convert json string to js object</p>
-        <p>JSON.stringify() : convert js object to json string</p>
+            <p>target attributes:
+                <li>_self:open in same window</li>
+                <li>_blank:open in new window</li>
+                <li>_parent:open in parent frame</li>
+                <li>_top:open in full body window</li>
+            </p>
 
 
-        <br>
+            <br>
+            <h4>CSS</h4>
+            <p>querySelector: it returns the first element that matches the specified selectors. it is used to select
+                elements
+                using css selectors</p>
 
-        <p>Media properties:All,Screen,Print,Speech</p>
-        <div class="example" id="ex"></div>
+            <p>
+                <strong>css: Inline css overrides internal css</strong><br>
+                <strong>Internal css overrides external css</strong><br>
+                <strong>External css overrides browser default css</strong><br>
+                It is like layers.The closer the style is to the element,the higher precedence it has.
+            </p>
 
-    </div>
-    <div>
-        Codes
-        <div class="p-1">
-            <button onclick="prime()">Prime No</button>
-            <button onclick="factorial(5,'with')">Factorial</button>
-            <button onclick="factorial(5,'without')">Factorial</button>
-            <button onclick="armstrong(123)">Armstrong No</button>
-            <button onclick="fibonacci()">Fibonacci Series</button>
-            <button onclick="palindrome('mom','str')">Palindrome</button>
-            <button onclick="palindrome('121','num')">Palindrome</button>
-            <button onclick="palindrome('[2,3,1]','arr')">Palindrome</button>
-            <button onclick="bubbleSort()">Bubble Sort</button>
-            <button onclick="minMax()">Min/Max</button>
-            <button onclick="maxOccureance()">Max Occurance</button>
-            <button onclick="arrSort()">Arr Sort</button>
-            <button onclick="removeDuplicates('[3,4,5,3,5]')">Arr Remove Duplicates</button>
-            <button onclick="merge('[1,2,4]','[5,7,8]')">Merge Arr & Remove Duplicates</button>
-            <button onclick="binarySearch('[1,2,4,6,8,9]','6')">Binary Search</button>
-            <button onclick="strOp()">String Operation</button>
-            <button onclick="Anagram('sleep','speel')">Anagram</button>
-            <!-- <button onclick=""></button> -->
-            <!-- <button onclick=""></button> -->
-            <!-- <button onclick=""></button> -->
+            <br>
+            <h4>JS</h4>
+            <p>Js used for client side scripting as well as server side scripting.</p>
 
+            <br>
+            <p>How js works:</p>
+            first received by the js engine then inside js engine parser is used to check code for
+            syntatic
+            errors in line by line manner.<br>
+            After no error in code it creates the data structure called AST(Abstract
+            Syntax
+            Tree)<br>
+            Then js engine convert the js code into machine code. Last byte code get executed</p>
+            <br>
+            <p>window is the first thing that gets loaded in the browser. The document object is page that will be
+                loaded into
+                the browser. The document actually gets loaded inside window object.</p>
+            <p>window properties are:- document, history, screen, navigator, location</p>
+            <p>
+                window object is used to display popup dialog box(alert,confirm,prompt,open,close)
+                history object is used to switch to history pages(back,forward,go(number))
+            </p>
+            <br>
+            <p>Advantages of JS</p>
+            <ol>
+                <li>It separate html and code.</li>
+                <li>Cached js files can speed up page loads.</li>
+                <li>lightweight and interpreted programming language.</li>
+                <li>open and cross platform programming language.</li>
+                <li>Dynamically typed language : variable changes type dynamically.</li>
+            </ol>
+
+            <p>Variable</p>
+            <ol>
+                <li>var: Global Scope, updated and redeclare</li>
+                <li>let: Blocked scope, updated but not redeclare</li>
+                <li>const: Blocked scope, not updated and not redeclare</li>
+            </ol>
+
+            <p>Data Types</p>
+            <p>Primitive: store only single value</p>
+            string:"str"
+            number:123
+            undefined:undefined
+            boolean:true,false
+            null:null,Null
+            symbol:unique identifier used to store an anonymous and unique value <br>
+            <p>Non Primitive: store multiple value</p>
+            Array:
+            object: collection of data</p>
+
+            <br>
+            <p> Difference between rest and spread:</p>
+            Rest parameter is used to take variable number of arguments and turns into an array while Spread
+            operator takes
+            an array or an object and spreads it.
+            <br>Rest parameter is used in function declaration whereas Spread operator is used in function call
+            </p>
+
+            <br>
+            <p>Arrow function : It can only be used as a function expression</p>
+            var add = (a,b) => a+b;
+            var mul = (a) => a*2;
+
+            <br>
+            <p>Javascript Hoisting : It is js default behavior of moving declarations to the top. Always declare
+                variables at
+                the beginning of every scope</p>
+
+            <p>Closure: It is an inner function. It can access the outer veriable of function. To use closure simply
+                define
+                function inside another function and expose it.</p>
+
+            <p>Anonymous function: without having any name and wont do anything on their own. These are generally use
+                along with
+                an event handler</p>
+            <p>Js Callback: function passed to some method as a argument or option. It is a function that is to be
+                executed
+                after another function has finished executing</p>
+
+            <br>
+
+            <br>
+            <p>Slice: return the selected element in array as a new array object.It doesn't change the original array
+            </p>
+            <p>Splice: return the removed items in an array.It changes the original array</p>
+
+            <br>
+
+            <p>JSON.parse():convert json string to js object</p>
+            <p>JSON.stringify() : convert js object to json string</p>
+
+
+            <br>
+
+            <p>Media properties:All,Screen,Print,Speech</p>
+            <div class="example" id="ex"></div>
 
         </div>
-    </div>
-    <div>
-        Unsorted
-        <div class="loader">
+        <div>
+            Codes
+            <div class="p-1">
+                <button onclick="prime()">Prime No</button>
+                <button onclick="factorial(5,'with')">Factorial</button>
+                <button onclick="factorial(5,'without')">Factorial</button>
+                <button onclick="armstrong(123)">Armstrong No</button>
+                <button onclick="fibonacci()">Fibonacci Series</button>
+                <button onclick="palindrome('mom','str')">Palindrome</button>
+                <button onclick="palindrome('121','num')">Palindrome</button>
+                <button onclick="palindrome('[2,3,1]','arr')">Palindrome</button>
+                <button onclick="bubbleSort()">Bubble Sort</button>
+                <button onclick="minMax()">Min/Max</button>
+                <button onclick="maxOccureance()">Max Occurance</button>
+                <button onclick="arrSort()">Arr Sort</button>
+                <button onclick="removeDuplicates('[3,4,5,3,5]')">Arr Remove Duplicates</button>
+                <button onclick="merge('[1,2,4]','[5,7,8]')">Merge Arr & Remove Duplicates</button>
+                <button onclick="binarySearch('[1,2,4,6,8,9]','6')">Binary Search</button>
+                <button onclick="strOp()">String Operation</button>
+                <button onclick="Anagram('sleep','speel')">Anagram</button>
+                <!-- <button onclick=""></button> -->
+                <!-- <button onclick=""></button> -->
+                <!-- <button onclick=""></button> -->
 
+
+            </div>
         </div>
+        <div>
+            Unsorted
+            <div class="loader">
 
-        <details>
-            <summary>This is details,summary accordion.</summary>
-            <ul>
-                <li>Kirtishil</li>
-                <li>Amit</li>
-                <li>Ganesh</li>
-            </ul>
-        </details>
+            </div>
 
-        <br>
-        <label for="showtimes">Showtimes</label>
-        <select id="showtimes" name="showtimes">
-            <optgroup label="1PM"></optgroup>
-            <option value="titanic">Twister</option>
-            <option value="nd">Napoleon Dynamite</option>
-            <option value="wab">What About Bob?</option>
-            <optgroup label="2PM"></optgroup>
-            <option value="bkrw">Be Kind Rewind</option>
-            <option value="stf">Stranger Than Fiction</option>
-        </select>
-        <br>
+            <details>
+                <summary>This is details,summary accordion.</summary>
+                <ul>
+                    <li>Kirtishil</li>
+                    <li>Amit</li>
+                    <li>Ganesh</li>
+                </ul>
+            </details>
 
-        <label for="js">JS</label>
-        <meter id="js" min="0" max="100" low="35" high="65" optimum="95" value="68"></meter>
+            <br>
+            <label for="showtimes">Showtimes</label>
+            <select id="showtimes" name="showtimes">
+                <optgroup label="1PM"></optgroup>
+                <option value="titanic">Twister</option>
+                <option value="nd">Napoleon Dynamite</option>
+                <option value="wab">What About Bob?</option>
+                <optgroup label="2PM"></optgroup>
+                <option value="bkrw">Be Kind Rewind</option>
+                <option value="stf">Stranger Than Fiction</option>
+            </select>
+            <br>
 
-        <input type="file" accept="image/*">
+            <label for="js">JS</label>
+            <meter id="js" min="0" max="100" low="35" high="65" optimum="95" value="68"></meter>
 
-        slider
-        <input type="range" min="1" max="100" value="46">
+            <input type="file" accept="image/*">
 
-        refresh or redirect page after certain duration
-        <meta http-equiv="refresh" content="30">
-        <!-- <meta http-equiv="refresh" content="5;https://google.com"> -->
+            slider
+            <input type="range" min="1" max="100" value="46">
 
-        <p oncontextmenu="return false">Disable right click</p>
+            refresh or redirect page after certain duration
+            <meta http-equiv="refresh" content="30">
+            <!-- <meta http-equiv="refresh" content="5;https://google.com"> -->
 
-        <p>&#128516</p>
+            <p oncontextmenu="return false">Disable right click</p>
 
-        <p contenteditable="true">This is editable.</p>
+            <p>&#128516</p>
 
-        <h1 id="demo"></h1>
+            <p contenteditable="true">This is editable.</p>
 
-        <input type="text" style="caret-color: red;">
+            <h1 id="demo"></h1>
 
-        <pre>
+            <input type="text" style="caret-color: red;">
+
+            <pre>
                 size breakpoints:
                 mobile:<=600px tablets:<=768px laptops:<=992px large:<=1200px 
             </pre>
 
-        <label for="sugg"></label>
-        <input type="text" id="sugg" list="sugglist">
-        <datalist id="sugglist">
-            <option value="Kirtishil"></option>
-            <option value="Snehashil"></option>
-            <option value="Sushil"></option>
-        </datalist>
+            <label for="sugg"></label>
+            <input type="text" id="sugg" list="sugglist">
+            <datalist id="sugglist">
+                <option value="Kirtishil"></option>
+                <option value="Snehashil"></option>
+                <option value="Sushil"></option>
+            </datalist>
 
-        <div class="append"></div>
+            <div class="append"></div>
 
-        <p>
-            .attr( "checked" ): checked <br>
-            .prop( "checked" ): true <br>
-            .is( ":checked" ): true <br>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut labore distinctio explicabo delectus quo,
-            dignissimos veniam voluptate ea, temporibus aut alias tempora quibusdam eius modi ipsam consequuntur
-            magnam
-            exercitationem praesentium!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente alias adipisci quis dolores ipsam
-            ullam, cum
-            distinctio nihil voluptatibus minima voluptatem mollitia debitis libero hic quam totam eum voluptates
-            temporibus!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum veritatis dicta in tempore quasi dolorem
-            rem
-            saepe consectetur, distinctio neque sapiente explicabo dolore laborum officiis corrupti maxime nisi unde
-            totam.
-        </p>
+            <p>
+                .attr( "checked" ): checked <br>
+                .prop( "checked" ): true <br>
+                .is( ":checked" ): true <br>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut labore distinctio explicabo delectus quo,
+                dignissimos veniam voluptate ea, temporibus aut alias tempora quibusdam eius modi ipsam consequuntur
+                magnam
+                exercitationem praesentium!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente alias adipisci quis dolores ipsam
+                ullam, cum
+                distinctio nihil voluptatibus minima voluptatem mollitia debitis libero hic quam totam eum voluptates
+                temporibus!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum veritatis dicta in tempore quasi dolorem
+                rem
+                saepe consectetur, distinctio neque sapiente explicabo dolore laborum officiis corrupti maxime nisi unde
+                totam.
+            </p>
 
-        <div id="box">
-            Box
+            <div id="box">
+                Box
+            </div>
+
         </div>
 
-    </div>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
-    <!-- external js -->
-    <script src="js_codes.js"></script>
-</body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+            </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            </script>
+        <!-- external js -->
+        <script src="js_codes.js"></script>
+    </body>
 
 </html>

@@ -1,22 +1,4 @@
 npx create-react-app@5.0.0 my-app
-
-first time -
-npx create-react-app myApp
-
-cd myApp
-
-npm start
-
------------------------------------
-delete some files from src folder-
-index.css 
-app.test.js 
-logo.svg
-reportWebVitals.js
-setupTests.js
-------------------------------------
-delete some files from public folder-
-logo.png
 -----------------------------------
 destructuring syntax----------------
 const user = { name: 'kirtishil', age: 24 }
