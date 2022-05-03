@@ -803,3 +803,15 @@ function total(num) {
   };
 }
 total(5)(10);
+
+// Async JS
+function greet(name) {
+  console.log(`Hello ${name}`);
+}
+
+function higherOrderFunction(callback) {
+  const name = "Kirtishil";
+  callback(name);
+}
+
+higherOrderFunction(greet);
