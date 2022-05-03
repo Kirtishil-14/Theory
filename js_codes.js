@@ -815,3 +815,23 @@ function higherOrderFunction(callback) {
 }
 
 higherOrderFunction(greet);
+
+// promise example
+function holdTillResponse() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("resolved");
+    }, 2000);
+  });
+}
+
+async function mainFun() {
+  console.log("calling");
+  const result = await holdTillResponse();
+  console.log(result);
+  //under this line will execute after above result
+  console.log(111);
+  // expected output: "resolved"
+}
+
+mainFun();
