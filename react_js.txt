@@ -117,3 +117,17 @@ function myVehicle({ model, registration: { state } }) {
 }
 
 ----------------------------
+react redux:
+useSelector = reads value from store state and subscribe to updates
+useDispatch = return store dispatch method to let you dispatch actions
+
+connect = reads value from store and re-reads values when store updates
+
+mapStateToProps = called every time when store state changes and return object of data this component needs
+
+mapDispatchToProps = 
+if it is a function it will called once on component creation.It will receive dispatch as an argument and should return object full of function that used dispatch to dispatch actions.
+if it is an object full of action creators,each action creator will be turned into a prop function that automatically dispatches its action when needed
+
+syntax = connect(mapStateToProps, mapDispatchToProps)(Component)
+
