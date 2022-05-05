@@ -117,6 +117,17 @@ function myVehicle({ model, registration: { state } }) {
 }
 
 ----------------------------
+redux:
+createStore = create redux store
+combineReducers = combine multiple slice reducers into single reducer
+applyMiddleware = combine multiple middleware into store enhancer
+compose = combine multiple store enhancers into single store enhancer
+
+1.create store
+
+
+
+----------------------------
 react redux:
 useSelector = reads value from store state and subscribe to updates
 useDispatch = return store dispatch method to let you dispatch actions
