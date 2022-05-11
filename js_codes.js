@@ -1,3 +1,30 @@
+//max number in arr
+function myFunction(a) {
+  return Math.max(...a);
+}
+myFunction([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+//negative nos in array
+var narr = [2, -3, 5, -7];
+console.log(narr.filter((el) => el < 0).length);
+
+//reduce example
+/* 
+input = [1,'b'],['a',2]
+output = {1:'a',b:2}
+a.reduce((acc, cur, i) => ({ ...acc, [cur]: b[i] }), {});
+----------------------------------------------------------------
+input = {a:1,b:2,c:3}
+output = 6
+Object.values(a).reduce((sum, cur) => sum + cur, 0);
+ */
+
+/* 
+input = 'm', 'how many times does the character occur in this sentence?'
+output = 2
+b.split(a).length - 1
+*/
+
 //Array
 //foreach
 var arrr = [2, 4, 6, 7, 8];
