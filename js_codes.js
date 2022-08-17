@@ -1,3 +1,18 @@
+//max occurance of char in str
+var getMax = function (str) {
+ var max = 0,
+     maxChar = '';
+  str.split('').forEach(function(char){
+    if(str.split(char).length > max) {
+        max = str.split(char).length;
+        maxChar = char;
+     }
+  });
+  console.log(maxChar,max)
+};
+
+getMax('aaaabbbbbbcd');
+
 //max number in arr
 function myFunction(a) {
   return Math.max(...a);
