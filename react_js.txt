@@ -1,5 +1,124 @@
 npx create-react-app@5.0.0 my-app
------------------------------------
+
+version 17+
+
+React: JS library
+
+Real DOM:
+The real DOM updates slower.
+The real DOM can directly update HTML.
+The virtual DOM updates the JSX if the element updates.
+In real DOM, DOM manipulation is very expensive.
+There is a lot of memory wastage in The real DOM.
+
+Virtual DOM:
+The virtual DOM updates faster.
+The virtual DOM cannot directly update HTML.
+In virtual DOM, DOM manipulation is very easy.
+There is no memory wastage in the virtual DOM.
+
+JSX: JavaScript XML
+
+Types of Component: 
+1.StateFull (class component)
+2.StateLess (function component)
+
+
+Props:
+Read Only
+Immutable (not change)
+passed as a parameter from parent to child component
+props are external and controlled by whatever renders the component
+
+State: 
+State changes can be asynchronous.
+Mutable (can change)
+not accessible to child component
+state is internal and controlled by the component itself
+
+Lifecycle:
+1.Mounting
+  constructor() = set up the initial state and other initial values
+  getDerivedStateFromProps() = It takes state as an argument, and returns an object with changes to the state
+  render() = outputs the HTML to the DOM
+  componentDidMount() = run statements that requires that the component is already placed in the DOM
+2.Updating
+  getDerivedStateFromProps()
+  shouldComponentUpdate() =return a Boolean value that specifies whether React should continue with the rendering or not
+  render() = re-render the HTML to the DOM, with the new changes
+  getSnapshotBeforeUpdate() = even after the update, you can check what the values were before the update
+  componentDidUpdate() = called after the component is updated in the DOM
+3.Unmounting
+  componentWillUnmount() =  called when the component is about to be removed from the DOM
+
+Synthetic Events:
+Your event handlers will be passed instances of SyntheticEvent , a cross-browser wrapper around the browser's native event
+ensuring that the events are consistent across different browsers
+stopPropagation() and preventDefault()
+
+Controlled Component:
+form data is handled by react component
+Internal state is not maintained
+It accepts the current value as props
+
+
+Uncontrolled Component:
+handled by the DOM
+Internal state is maintained
+We access the values using refs
+
+Lifting state up:
+sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”
+
+Higher Order Components:
+advanced technique in React for reusing component logic
+It is a function that takes a component and returns a new component
+
+
+Hooks:
+Hooks are functions that let you “hook into” React state and lifecycle features from function components.
+useState:Returns a stateful value, and a function to update it.
+useEffect:Accepts a function that contains imperative, possibly effectful code.
+useContext:Accepts a context object and returns the current context value for that context.
+useReducer:Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method.
+useCallback:will return a memoized version of the callback that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
+useMemo:will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
+useMemo( ) hook can be used to cache such functions. By using useMemo( ), the CPU-Expensive function gets called only when it is needed
+useRef:returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component.
+
+
+React PureComponent
+to reduce the re-renders of a component unnecessarily
+
+Error Boundaries:
+catch errors that occur in the render phase
+
+PropTypes: used to make sure the data you receive is valid
+PropTypes.bool
+PropTypes.func
+PropTypes.node
+PropTypes.number
+PropTypes.string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Difference between map and forEach
+The forEach() method does not create a new array based on the given array. The map() method creates an entirely new array. The forEach() method returns “undefined“. The map() method returns the newly created array according to the provided callback function
+
+
+
 destructuring syntax----------------
 const user = { name: 'kirtishil', age: 24 }
 const { name, age } = user;
@@ -117,7 +236,17 @@ function myVehicle({ model, registration: { state } }) {
 }
 
 ----------------------------
-redux:
+redux: js library
+to manage the application state
+
+Store: Holds the state of the application.
+Action: The source information for the store.
+Reducer: Specifies how the application's state changes in response to actions sent to the store.
+
+
+
+
+
 createStore = create redux store
 combineReducers = combine multiple slice reducers into single reducer
 applyMiddleware = combine multiple middleware into store enhancer
