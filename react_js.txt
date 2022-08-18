@@ -119,33 +119,7 @@ The forEach() method does not create a new array based on the given array. The m
 
 
 
-destructuring syntax----------------
-const user = { name: 'kirtishil', age: 24 }
-const { name, age } = user;
-// name = 'kirtishil, age = 24
 
-Destructuring also works on arrays, only it uses index instead of object keys:
-const numbers = [1, 2, 3, 4, 5];
-const [one, two] = numbers; // one = 1, two = 2
-const [fruit1 ,,,, fruit5] = fruits;
-
-const Susan = {
-  firstName: "Susan",
-  lastName: "Steward",
-  age: 14,
-  hobbies: {
-    hobby1: "singing",
-    hobby2: "dancing"
-  }
-};
-
-const {firstName, age, hobbies:{hobby1}} = Susan;
-console.log(firstName, age, hobby1); //"Susan" 14 "singing"
-
-function individualData({firstName, age, hobbies:{hobby1}}){
-  console.log(firstName, age, hobby1); //"Susan" 14 "singing"
-}
-individualData(Susan);
 --------------------
 
 The reduce method, which takes a function with two arguments(accumulator and item).We can also return the total number of all the array items using the reduce method
@@ -199,41 +173,6 @@ async function mainFun() {
 
 mainFun();
 
-destructuring------
-for object-----------
-const vehicleOne = {
-  brand: 'Ford',
-  model: 'Mustang',
-  type: 'car',
-  year: 2021, 
-  color: 'red'
-}
-
-myVehicle(vehicleOne);
-
-function myVehicle({type, color, brand, model}) {
-  const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
-}
-
-nested object---------
-const vehicleOne = {
-  brand: 'Ford',
-  model: 'Mustang',
-  type: 'car',
-  year: 2021, 
-  color: 'red',
-  registration: {
-    city: 'Houston',
-    state: 'Texas',
-    country: 'USA'
-  }
-}
-
-myVehicle(vehicleOne)
-
-function myVehicle({ model, registration: { state } }) {
-  const message = 'My ' + model + ' is registered in ' + state + '.';
-}
 
 ----------------------------
 redux: js library

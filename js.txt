@@ -1,0 +1,128 @@
+JS
+Js is interpreted programming language.
+Js used for client side scripting as well as server side scripting.
+
+
+How js works:
+first received by the js engine then inside js engine parser is used to check code for
+syntatic
+errors in line by line manner.
+After no error in code it creates the data structure called AST(Abstract
+Syntax
+Tree)
+Then js engine convert the js code into machine code. Last byte code get executed
+
+window is the first thing that gets loaded in the browser. The document object is page that will be loaded into
+    the browser. The document actually gets loaded inside window object.
+window properties are:- document, history, screen, navigator, location
+
+    window object is used to display popup dialog box(alert,confirm,prompt,open,close)
+    history object is used to switch to history pages(back,forward,go(number))
+
+
+Advantages of JS
+
+    It separate html and code.
+    Cached js files can speed up page loads.
+    lightweight and interpreted programming language.
+    open and cross platform programming language.
+    Dynamically typed language : variable changes type dynamically.
+
+
+Variable
+
+    var: Global Scope, updated and redeclare
+    let: Blocked scope, updated but not redeclare
+    const: Blocked scope, not updated and not redeclare
+
+
+Data Types
+Primitive: store only single value
+string:"str"
+number:123
+undefined:undefined
+boolean:true,false
+null:null,Null
+symbol:unique identifier used to store an anonymous and unique value 
+Non Primitive: store multiple value
+Array:
+object: collection of data
+
+
+Difference between rest and spread:
+Rest parameter is used to take variable number of arguments and turns into an array while Spread
+operator takes
+an array or an object and spreads it.
+Rest parameter is used in function declaration whereas Spread operator is used in function call
+
+
+
+Arrow function : It can only be used as a function expression
+var add = (a,b) => a+b;
+var mul = (a) => a*2;
+
+
+Javascript Hoisting : It is js default behavior of moving declarations to the top. Always declare
+    variables at
+    the beginning of every scope
+
+Closure: It is an inner function. It can access the outer veriable of function. To use closure simply
+    define
+    function inside another function and expose it.
+
+Anonymous function: without having any name and wont do anything on their own. These are generally use
+    along with
+    an event handler
+Js Callback: function passed to some method as a argument or option. It is a function that is to be
+    executed
+    after another function has finished executing
+
+
+
+
+Slice: return the selected element in array as a new array object.It doesn't change the original array
+
+Splice: return the removed items in an array.It changes the original array
+
+
+
+JSON.parse():convert json string to js object
+JSON.stringify() : convert js object to json string
+
+
+
+ES6 Features:
+
+    let and const keywords,
+    Arrow Functions : ()=>({}),
+    Template Literals : `${}`,
+    Destructuring (arr,obj),
+    Multi line string : `String`
+    Promises,
+    Modules (import,export),
+
+
+.attr( "checked" ): checked 
+    .prop( "checked" ): true 
+    .is( ":checked" ): true 
+
+    
+Cookies are data stored in small files on computer.
+create = document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+read = document.cookie
+delete = change value of expires
+update = same as create
+
+
+
+generator function
+function* simpleGenerator(){
+yeild 1
+yeild 2
+yeild 3
+}
+
+const generatorObject = simpleGenerator()
+console.log(generatorObject.next()) // value: 1,done: false
+console.log(generatorObject.next()) // value: 2,done: false
+        

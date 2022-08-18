@@ -144,111 +144,6 @@
             </p>
 
             <br>
-            <h4>JS</h4>
-            <h1>Js is interpreted programming language.</h1>
-            <p>Js used for client side scripting as well as server side scripting.</p>
-
-            <br>
-            <p>How js works:</p>
-            first received by the js engine then inside js engine parser is used to check code for
-            syntatic
-            errors in line by line manner.<br>
-            After no error in code it creates the data structure called AST(Abstract
-            Syntax
-            Tree)<br>
-            Then js engine convert the js code into machine code. Last byte code get executed</p>
-            <br>
-            <p>window is the first thing that gets loaded in the browser. The document object is page that will be
-                loaded into
-                the browser. The document actually gets loaded inside window object.</p>
-            <p>window properties are:- document, history, screen, navigator, location</p>
-            <p>
-                window object is used to display popup dialog box(alert,confirm,prompt,open,close)
-                history object is used to switch to history pages(back,forward,go(number))
-            </p>
-            <br>
-            <p>Advantages of JS</p>
-            <ol>
-                <li>It separate html and code.</li>
-                <li>Cached js files can speed up page loads.</li>
-                <li>lightweight and interpreted programming language.</li>
-                <li>open and cross platform programming language.</li>
-                <li>Dynamically typed language : variable changes type dynamically.</li>
-            </ol>
-
-            <p>Variable</p>
-            <ol>
-                <li>var: Global Scope, updated and redeclare</li>
-                <li>let: Blocked scope, updated but not redeclare</li>
-                <li>const: Blocked scope, not updated and not redeclare</li>
-            </ol>
-
-            <p>Data Types</p>
-            <p>Primitive: store only single value</p>
-            string:"str"
-            number:123
-            undefined:undefined
-            boolean:true,false
-            null:null,Null
-            symbol:unique identifier used to store an anonymous and unique value <br>
-            <p>Non Primitive: store multiple value</p>
-            Array:
-            object: collection of data</p>
-
-            <br>
-            <p> Difference between rest and spread:</p>
-            Rest parameter is used to take variable number of arguments and turns into an array while Spread
-            operator takes
-            an array or an object and spreads it.
-            <br>Rest parameter is used in function declaration whereas Spread operator is used in function call
-            </p>
-
-            <br>
-            <p>Arrow function : It can only be used as a function expression</p>
-            var add = (a,b) => a+b;
-            var mul = (a) => a*2;
-
-            <br>
-            <p>Javascript Hoisting : It is js default behavior of moving declarations to the top. Always declare
-                variables at
-                the beginning of every scope</p>
-
-            <p>Closure: It is an inner function. It can access the outer veriable of function. To use closure simply
-                define
-                function inside another function and expose it.</p>
-
-            <p>Anonymous function: without having any name and wont do anything on their own. These are generally use
-                along with
-                an event handler</p>
-            <p>Js Callback: function passed to some method as a argument or option. It is a function that is to be
-                executed
-                after another function has finished executing</p>
-
-            <br>
-
-            <br>
-            <p>Slice: return the selected element in array as a new array object.It doesn't change the original array
-            </p>
-            <p>Splice: return the removed items in an array.It changes the original array</p>
-
-            <br>
-
-            <p>JSON.parse():convert json string to js object</p>
-            <p>JSON.stringify() : convert js object to json string</p>
-
-
-            <br>
-            ES6 Features:
-            <p>
-                let and const keywords,
-                Arrow Functions : ()=>({}),
-                Template Literals : `${}`,
-                Destructuring (arr,obj),
-                Multi line string : `String`
-                Promises,
-                Modules (import,export),
-            </p>
-
 
             <p>Media properties:All,Screen,Print,Speech</p>
             <div class="example" id="ex"></div>
@@ -347,9 +242,7 @@
             <div class="append"></div>
 
             <p>
-                .attr( "checked" ): checked <br>
-                .prop( "checked" ): true <br>
-                .is( ":checked" ): true <br>
+
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut labore distinctio explicabo delectus quo,
                 dignissimos veniam voluptate ea, temporibus aut alias tempora quibusdam eius modi ipsam consequuntur
                 magnam
@@ -370,26 +263,7 @@
 
         </div>
 
-        <div>
-            Cookies are data stored in small files on computer.
-            create = document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-            read = document.cookie
-            delete = change value of expires
-            update = same as create
-        </div>
 
-        <div>
-            generator function
-            function* simpleGenerator(){
-            yeild 1
-            yeild 2
-            yeild 3
-            }
-
-            const generatorObject = simpleGenerator()
-            console.log(generatorObject.next()) // value: 1,done: false
-            console.log(generatorObject.next()) // value: 2,done: false
-        </div>
 
 
         <!-- Optional JavaScript -->
