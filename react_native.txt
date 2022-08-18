@@ -1,0 +1,72 @@
+React Native (version = .67)
+Mobile Development
+Native uses its API to render code for mobile applications.
+
+Why react native is better than others?
+React Native is a platform that allows you to build native apps for iOS and Android.
+It uses native components instead of using web components as building blocks. 
+It targets mobile platforms rather than the browser. Its purpose is to learn once and write anywhere.
+
+
+Core components: 
+- Text : <p></p>
+- View: <div></div>
+- Image: <img />
+- ScrollView : <div "overflow"></div>
+- TextInput: <input type="text"/>
+
+FlatList : 
+only renders elements that are currently showing on the screen, not all the elements at once
+requires two props:
+1. data: array of objects
+2. renderItem: function that returns a JSX element
+<FlatList
+    data={[
+      {key: 'Devin'},
+      {key: 'Dan'},
+      {key: 'Dominic'},
+      {key: 'Jackson'},
+      {key: 'James'},
+      {key: 'Joel'},
+      {key: 'John'},
+      {key: 'Jillian'},
+      {key: 'Jimmy'},
+      {key: 'Julie'},
+    ]}
+    renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+  />
+
+SectionList :
+data broken into logical sections, maybe with section headers
+<SectionList
+    sections={[
+      {title: 'D', data: ['Devin', 'Dan', 'Dominic']},
+      {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
+    ]}
+    renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
+    renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+    keyExtractor={(item, index) => `basicListEntry-${item.title}`}
+ />
+
+TouchableHighlight :
+The view's background will be darkened when the user presses down on the button.
+
+TouchableNativeFeedback :
+display ink surface reaction ripples that respond to the user's touch
+
+TouchableOpacity :
+provide feedback by reducing the opacity of the button, allowing the background to be seen through while the user is pressing down.
+
+TouchableWithoutFeedback :
+If you need to handle a tap gesture but you don't want any feedback to be displayed
+
+Pure Component
+it renders a similar output for a similar state and props
+
+Hot Reloading
+It only refreshes the files that were changed without losing the state of the app.
+It displays the code changes according to new code changes without restarting the app from start.
+
+Live Reloading
+It reloads or refreshes the entire app when a file changes.
+It requires the restart of the app in case of any change in the code
