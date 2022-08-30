@@ -1,7 +1,8 @@
 JS
 Js is interpreted programming language.
 Js used for client side scripting as well as server side scripting.
-
+JavaScript is dynamically typed.
+This means the type of objects is checked during run-time. (In a statically typed language, the type is checked during compile-time.)
 
 How js works:
 first received by the js engine then inside js engine parser is used to check code for
@@ -51,8 +52,7 @@ object: collection of data
 
 Difference between rest and spread:
 Rest parameter is used to take variable number of arguments and turns into an array while Spread
-operator takes
-an array or an object and spreads it.
+operator takes an array or an object and spreads it.
 Rest parameter is used in function declaration whereas Spread operator is used in function call
 
 
@@ -63,21 +63,21 @@ var mul = (a) => a*2;
 
 
 Javascript Hoisting : It is js default behavior of moving declarations to the top. Always declare
-    variables at
-    the beginning of every scope
+    variables at the beginning of every scope
 
 Closure: It is an inner function. It can access the outer veriable of function. To use closure simply
-    define
-    function inside another function and expose it.
+    define function inside another function and expose it.
 
 Anonymous function: without having any name and wont do anything on their own. These are generally use
-    along with
-    an event handler
+    along with  an event handler
+
 Js Callback: function passed to some method as a argument or option. It is a function that is to be
-    executed
-    after another function has finished executing
+    executed after another function has finished executing
 
+Promise
+A promise is an object that may produce value in the future.A promise is always in one of the possible states: fulfilled, rejected, or pending.
 
+Strict mode allows you to set your program to operate in a strict context.
 
 
 Slice: return the selected element in array as a new array object.It doesn't change the original array
@@ -126,3 +126,137 @@ const generatorObject = simpleGenerator()
 console.log(generatorObject.next()) // value: 1,done: false
 console.log(generatorObject.next()) // value: 2,done: false
         
+
+You get a negative infinity if you divide a negative number with zero in JavaScript.
+console.log(-10/0)  - -Infinity
+
+Implicit type coercion means a value is converted from one type to another under the hood
+var x = 1;
+var y = "2";
+
+x + y // Returns "12"
+----------------------------------------------
+var x = 10;
+var y = "10";
+
+x - y // Returns 0
+
+
+Local storage — stores data for the client without an expiration date.
+Session storage — stores data for only one session. The data is gone when the browser is closed.
+
+The eval() function evaluates code inside a string.
+console.log(eval("5+10"));
+15
+
+In event bubbling an event starts by running the event handlers on the innermost element. Then it triggers the parents’ event handlers until it reaches the outermost element.
+
+--------------------------------------
+const map ={};
+const string = "Hello World";
+const array = string.split("");
+array.forEach(i => map[i] ? map[i] = map[i] + 1 : map[i] = 1);
+console.log(map)
+{
+    "H": 1,
+    "e": 1,
+    "l": 3,
+    "o": 2,
+    " ": 1,
+    "W": 1,
+    "r": 1,
+    "d": 1
+}
+---------------------------------------
+const string = "hello world";
+const removeDups = [... new Set(string.split(""))].join("")
+op=
+'helo wrd'
+---------------------------------------
+const removeChar = (string, char) => {
+    return string.split("").filter(i => i !== char).join("");
+}
+removeChar('sas','a')
+'ss'
+----------------------------------------
+const getMaxChar = (string) => {
+    const map = {};
+    string.split("").forEach(char => {
+        map[char] = map[char] ? map[char] + 1 : 1;
+    });
+    max = 1;
+    char = string[0]
+    for(let k in map){
+        if(map[k] > max) {
+            max = map[k];
+            char = k
+        }
+    }
+    return char;
+}
+console.log(getMaxChar("hello world"));
+---------------------------------------------
+const removeChar = (string, char) => {
+return string.split("").filter(i => i !== char).join("")
+}
+console.log(removeChar("hello world",'h'));
+op=
+ello world
+---------------------------------------------
+Input: “adsjfdsfsfjsdjfhacabcsbajda”
+Output: { a: 5, b: 2, c: 2, d: 4, f: 4, j: 4, s: 5 }
+
+
+const count_duplicate_characters = function(str) {    
+    var arr = {}
+    for (let i = 0; i < str.length; i++) {
+        if (Object.keys(arr).includes(str[i])) {
+            arr[str[i]] = arr[str[i]] + 1
+            continue
+        }  
+        arr[str[i]] = 1
+    }
+    return arr    
+}
+
+
+const count_duplicate_characters = function(str) {
+    var result = {}
+    var arr = str.toLowerCase().split("").sort().join("").match(/(.)\1+/g)
+    if (arr !== null) {
+        arr.forEach(element => {
+            result[element[0]] = element.length
+        });
+    }
+    return result
+}
+
+-------------------------------------
+Input : ["You", "are", "beautiful", "looking"]
+Output : [“You", "are", "looking", "beautiful"]
+
+const sort = function(arr) {
+
+    for (let i = 0; i < arr.length; i ++ ){
+        var temp = arr[i]
+        var j = i - 1
+        while (j >= 0 && temp.length < arr[j].length) {
+            arr[j+1] = arr[j]
+            j--
+        }
+        arr[j+1] = temp
+    }
+}
+
+----------------------------------------
+Checking that a string contains a substring
+
+const string = “foo”
+const substring = “oo”
+string.includes(substring)
+<< true
+
+
+string.indexOf(substring) !== -1
+<< true
+
