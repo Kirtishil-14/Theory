@@ -86,6 +86,9 @@ useMemo:will only recompute the memoized value when one of the dependencies has 
 useMemo( ) hook can be used to cache such functions. By using useMemo( ), the CPU-Expensive function gets called only when it is needed
 useRef:returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component.
 
+useMemo returns value
+useCallback returns function
+
 
 React PureComponent
 to reduce the re-renders of a component unnecessarily
