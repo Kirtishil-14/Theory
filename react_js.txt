@@ -85,9 +85,123 @@ useCallback:will return a memoized version of the callback that only changes if 
 useMemo:will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
 useMemo( ) hook can be used to cache such functions. By using useMemo( ), the CPU-Expensive function gets called only when it is needed
 useRef:returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component.
-
 useMemo returns value
 useCallback returns function
+
+-------------------------------------------------
+// this will run when the component mounts and anytime the stateful data changes
+React.useEffect(() => {
+    alert('Hey, Nads here!');
+});
+
+// this will run, when the component is first initialized
+React.useEffect(() => {
+    alert('Hey, Nads here!');
+}, []);
+
+// this will run only when count state changes
+React.useEffect(() => {
+    fetch('nads').then(() => setLoaded(true));
+}, [count]);
+
+// this will run when the component is destroyed or before the component is removed from UI.
+React.useEffect(() => {
+    alert('Hey, Nads here');
+
+    return () => alert('Goodbye Component');
+});
+--------------------------------------------------
+const ans = {
+    right: '✅',
+    wrong: '❌'
+}
+
+const AnsContext = createContext(ans);
+
+function Exam(props) {
+    return (
+        // Any child component inside this component can access the value which is sent.
+        <AnsContext.Provider value={ans.right}>
+            <RightAns />
+        </AnsContext.Provider>
+    )
+}
+
+function RightAns() {
+    // it consumes value from the nearest parent provider.
+    const ans = React.useContext(AnsContext);
+    return <p>{ans}</p>
+    // previously we were required to wrap up inside the AnsContext.Consumer
+    // but this useContext hook, get rids that.
+}
+--------------------------------------------------
+function App() {
+    const myBtn = React.useRef(null);
+    const handleBtn = () => myBtn.current.click();
+    return (
+        <button ref={myBtn} onChange={handleBtn} >
+        </button>
+    )
+}
+--------------------------------------------------
+function reducer(state, dispatch) {
+    switch(action.type) {
+        case 'increment':
+            return state+1;
+        case 'decrement':
+            return state-1;
+        default:
+            throw new Error();
+    }
+}
+
+function useReducer() {
+    // state is the state we want to show in the UI.
+    const [state, dispatch] = React.useReducer(reducer, 0);
+
+    return (
+        <>
+        Count : {state}
+        <button onClick={() => dispatch({type:'decrement'})}>-</button>
+        <button onClick={() => dispatch({type:'increment'})}>+</button>
+        </>
+    )
+}
+--------------------------------------------------
+function useMemo() {
+
+    const [count, setCount] = React.useState(60);
+
+    const expensiveCount = useMemo(() => {
+        return count**2;
+    }, [count]) // recompute when count changes.
+}
+--------------------------------------------------
+function useCallbackDemo() {
+    const [count, setCount] = useState(60);
+
+    const showCount = React.useCallback(() => {
+        alert(`Count ${count}`);
+    }, [count])
+
+    return <> <SomeChild handler = {showCount} /> </>
+}
+--------------------------------------------------
+useLayoutEffect :It works same as useEffect hook with one difference, the callback will run after rendering the component but before the actual updates have been painted to the screen.
+
+⚠️ : Blocks visual updates until your callback is finished.
+
+function useLayoutEffectDemo() {
+
+    const myBtn = React.useRef(null);
+
+    React.useLayoutEffect(() => {
+        const rect = myBtn.current.getBoundingClientRect();
+        // scroll position before the dom is visually updated
+        console.log(rect.height);
+    })
+}
+--------------------------------------------------
 
 
 React PureComponent

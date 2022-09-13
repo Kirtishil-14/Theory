@@ -1,0 +1,50 @@
+Async JS
+
+arr = [1,2]
+
+//callback
+getData(){
+	arr.map((e,i)=>{
+		console.log(e)
+	})
+}
+
+createData(e,callback){
+	arr.push(e)
+	callback();
+}
+createData(3,getData) 
+
+//promise
+createData(e){
+	return new Promise((resolve,reject)=>{
+		arr.push(e);
+		let error = false;
+		if(!error)
+			resolve();
+		else
+			reject('error');
+	})
+}
+createData(3).then(getData).catch(err => console.log(err)) 
+
+//async await
+async function start(){
+	await createData(3);
+	getData();
+}
+start();
+
+-----------------------------------------
+a = [],b = []
+a==b //false
+a===b //false
+//compare memory locations
+------------------------------------------
+a = [],b = a
+a==b //true
+a===b //true
+//points to same memory location
+-----------------------------------------
+ typeof NaN //number
+-----------------------------------------
