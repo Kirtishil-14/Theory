@@ -22,7 +22,6 @@ window properties are:- document, history, screen, navigator, location
 
 
 Advantages of JS
-
     It separate html and code.
     Cached js files can speed up page loads.
     lightweight and interpreted programming language.
@@ -31,7 +30,6 @@ Advantages of JS
 
 
 Variable
-
     var: Global Scope, updated and redeclare
     let: Blocked scope, updated but not redeclare
     const: Blocked scope, not updated and not redeclare
@@ -46,9 +44,17 @@ boolean:true,false
 null:null,Null
 symbol:unique identifier used to store an anonymous and unique value 
 Non Primitive: store multiple value
-Array:
-object: collection of data
+object: collection of data(array,date,object)
 
+falsy values:
+undefined
+null
+NAN
+''
+false
+0
+-0
+0n
 
 Difference between rest and spread:
 Rest parameter is used to take variable number of arguments and turns into an array while Spread
@@ -151,7 +157,56 @@ console.log(eval("5+10"));
 
 In event bubbling an event starts by running the event handlers on the innermost element. Then it triggers the parents’ event handlers until it reaches the outermost element.
 
+event delegation is the technique, bubbling is what the event itself does, and capturing is a way of using event delgation on events that don't bubble.
+
+--------------------------------------------
+Event delegation is a technique for listening to events where you delegate a parent element as the listener for all of the events that happen inside it.
+var form = document.querySelector('#hogwarts-application');
+
+// Listen for changes to fields inside the form
+form.addEventListener('input', function (event) {
+
+	// Log the field that was changed
+	console.log(event.target);
+
+}, false);
+
+or
+
+window.addEventListener('click', e => {
+  if (e.target.className === 'btn') console.log('Hello there!');
+});
 --------------------------------------
+event bubbling
+<div onclick="show()">
+	a
+	<div onclick="show1()">
+		b
+		<div onclick="show2()">
+			c
+		</div>
+	</div>
+</div>
+function show(){
+console.log(1)
+}
+function show1(){
+console.log(2)
+}
+function show2(){
+console.log(3)
+}
+You can stop bubbling by event.stopPropagation
+--------------------------------------
+Capturing is the exact opposite of bubbling, meaning that the outer event handlers are fired before the most specific handler (i.e. the one on the button). Note that all capturing event handlers are run first, then all the bubbling event handlers.
+You can use event capturing by applying a third argument to EventTarget.addEventListener, setting it to true. For example:
+// Capture phase
+ancestors.forEach(a => {
+  a.addEventListener('click', e => {
+    console.log(`Hello from ${e.currentTarget}`);
+  }, true);
+});
+---------------------------------------
 const map ={};
 const string = "Hello World";
 const array = string.split("");
