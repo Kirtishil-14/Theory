@@ -877,3 +877,69 @@ async function mainFun() {
 }
 
 mainFun();
+
+//
+const array = [2, 3, 4, 5, 4, 6, 4, 7, 4, 5, 6, 6];
+
+var dup = {};
+
+array.forEach((item) => {
+  dup[item] = (dup[item] || 0) + 1;
+});
+console.log(dup);
+
+const result = Object.entries(dup).reduce((acc, [key, value]) => {
+  if (value > 1) {
+    acc[key] = value;
+  }
+  return acc;
+}, {});
+
+console.log(result);
+
+const demo = {};
+
+for (let key in dup) {
+  if (dup[key] > 1) {
+    demo[key] = dup[key];
+  }
+}
+
+console.info(demo);
+
+
+//remove duplicates from array
+const arr1 = [1, 3, 4, 5, 6, 7, 8, 2, 5, 3];
+const arr2 = [2, 3, 6, 8, 9, 0, 4, 2];
+
+// Combine both arrays using the spread operator
+const combined = [...arr1, ...arr2];
+
+// Use a Set to automatically remove duplicates and then convert it back to an array
+const uniqueArray = [...new Set(combined)];
+
+console.log(uniqueArray);
+
+//////////////////////////////////////
+const arr1 = [1, 3, 4, 5, 6, 7, 8, 2, 5, 3];
+const arr2 = [2, 3, 6, 8, 9, 0, 4, 2];
+
+// Combine both arrays using the spread operator
+const combined = [...arr1, ...arr2];
+
+// Create an object to keep track of unique elements
+const uniqueElements = {};
+const uniqueArray = [];
+
+// Iterate over the combined array
+for (let i = 0; i < combined.length; i++) {
+    const value = combined[i];
+    if (!uniqueElements[value]) {
+        uniqueArray.push(value);
+        uniqueElements[value] = true;  // Mark this value as encountered
+    }
+}
+
+console.log(uniqueArray);
+
+///////////////////////////

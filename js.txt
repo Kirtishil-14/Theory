@@ -207,6 +207,13 @@ ancestors.forEach(a => {
   }, true);
 });
 ---------------------------------------
+Debounce vs. Throttle. 
+The major difference between debouncing and throttling is that debounce calls a function when a user hasn't carried out an event in a specific amount of time, 
+while throttle calls a function at intervals of a specified amount of time while the user is carrying out an event
+
+Event capturing means propagation of event is done from ancestor elements to child element in the DOM while event bubbling means propagation is done from child element to ancestor elements in the DOM. 
+The event capturing occurs followed by event bubbling.
+------------------------------------------------------------
 const map ={};
 const string = "Hello World";
 const array = string.split("");

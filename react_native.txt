@@ -70,3 +70,28 @@ It displays the code changes according to new code changes without restarting th
 Live Reloading
 It reloads or refreshes the entire app when a file changes.
 It requires the restart of the app in case of any change in the code
+
+Threads: We can control a single sequential flow within a program using a thread in React Native
+React Native right now uses 3 threads:
+-MAIN/UI  Thread — This is the main application thread on which your Android/iOS app is running.The only thread that can manipulate host views. 
+The UI of the application can be changed by the Main thread and it has access to it .
+-Shadow Thread — layout created using React library in React Native can be calculated by this and it is a background thread.
+-JavaScript Thread — The main Javascript code is executed by this thread.It is a thread where our business logic will run. 
+It means JS thread is a place where our JavaScript code is executed.
+
+
+Redux is a predictable state container for JavaScript apps. It helps write applications that run in different environments. 
+This means the entire data flow of the app is handled within a single container while persisting previous state.
+
+Actions: are payloads of information that send data from your application to your store. They are the only source of information for the store. 
+This means if any state change is necessary the change required will be dispatched through the actions.
+
+Reducers: “Actions describe the fact that something happened, but don’t specify how the application’s state changes in response. 
+This is the job of reducers.” when an action is dispatched for state change its the reducers duty to make the necessary changes to the 
+state and return the new state of the application.
+
+Store: a store can be created with help of reducers which holds the entire state of the application. 
+The recommended way is to use a single store for the entire application rather than having multiple stores 
+which will violate the use of redux which only has a single store.
+
+

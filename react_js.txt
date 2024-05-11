@@ -4,17 +4,19 @@ version 17+
 
 React: JS library
 
+Babel: 
+To transpile JSX code into simple react functions that can be understood by browsers
+
 Real DOM:
 The real DOM updates slower.
 The real DOM can directly update HTML.
-The virtual DOM updates the JSX if the element updates.
-In real DOM, DOM manipulation is very expensive.
+DOM manipulation is very expensive.
 There is a lot of memory wastage in The real DOM.
 
 Virtual DOM:
 The virtual DOM updates faster.
 The virtual DOM cannot directly update HTML.
-In virtual DOM, DOM manipulation is very easy.
+DOM manipulation is very easy.
 There is no memory wastage in the virtual DOM.
 
 JSX: JavaScript XML
@@ -35,6 +37,40 @@ State changes can be asynchronous.
 Mutable (can change)
 not accessible to child component
 state is internal and controlled by the component itself
+
+setState 
+It re-render component if some state or props changed
+shouldComponentUpdate() calls automatically
+
+forceUpdate
+It re-render component without even changing state or props
+It skips shouldComponentUpdate()
+
+
+------------------------------------------------------
+const [person, setPerson] = useState({
+    name: 'ABC',
+    work: {
+      title: 'Programmer',
+      city: 'Pune',
+    }
+  });
+
+//update the title to 'Developer'
+------------------------------------
+setPerson({
+      ...person,
+      work: {
+        ...person.work,
+        title: 'Developrt'
+      }
+    });
+---------------------------------
+setPerson((prev)=>{
+	return {...prev,work:{...prev.work,title:'developer'}}
+})
+----------------------------------
+
 
 Lifecycle:
 1.Mounting
@@ -57,7 +93,7 @@ ensuring that the events are consistent across different browsers
 stopPropagation() and preventDefault()
 
 Controlled Component:
-form data is handled by react component
+data is handled by react component
 Internal state is not maintained
 It accepts the current value as props
 
@@ -78,13 +114,14 @@ It is a function that takes a component and returns a new component
 Hooks:
 Hooks are functions that let you “hook into” React state and lifecycle features from function components.
 useState:Returns a stateful value, and a function to update it.
-useEffect:Accepts a function that contains imperative, possibly effectful code.
-useContext:Accepts a context object and returns the current context value for that context.
+useEffect:to manage side effects like api calls
+useContext:returns the current value for that context.
 useReducer:Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method.
 useCallback:will return a memoized version of the callback that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
 useMemo:will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
-useMemo( ) hook can be used to cache such functions. By using useMemo( ), the CPU-Expensive function gets called only when it is needed
-useRef:returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component.
+useRef:It can be used to store a mutable value that does not cause a re-render when updated.It can be used to access a DOM element directly.
+returns one item i.e. Object called current
+
 useMemo returns value
 useCallback returns function
 
@@ -217,25 +254,15 @@ PropTypes.node
 PropTypes.number
 PropTypes.string
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+--------------------------------------------------------
+Action – It’s an object that describes what happened.
+Reducer –  It is a place to determine how the state will change.
+Store – State/ Object tree of the entire application is saved in the Store.
+--------------------------------------------------------------------
 
 Difference between map and forEach
-The forEach() method does not create a new array based on the given array. The map() method creates an entirely new array. The forEach() method returns “undefined“. The map() method returns the newly created array according to the provided callback function
-
-
-
+The forEach() method does not create a new array based on the given array. The map() method creates an entirely new array. 
+The forEach() method returns “undefined“. The map() method returns the newly created array according to the provided callback function
 
 --------------------
 
@@ -300,16 +327,10 @@ Action: The source information for the store.
 Reducer: Specifies how the application's state changes in response to actions sent to the store.
 
 
-
-
-
 createStore = create redux store
 combineReducers = combine multiple slice reducers into single reducer
 applyMiddleware = combine multiple middleware into store enhancer
 compose = combine multiple store enhancers into single store enhancer
-
-1.create store
-
 
 
 ----------------------------
@@ -326,4 +347,29 @@ if it is a function it will called once on component creation.It will receive di
 if it is an object full of action creators,each action creator will be turned into a prop function that automatically dispatches its action when needed
 
 syntax = connect(mapStateToProps, mapDispatchToProps)(Component)
+-----------------------------
 
+Context API
+1. create the Context
+export const MyContext = createContext("")
+
+2. create Provider for Context => 
+<MyContext.Provider value={{text,setText}}>
+	<App />
+</MyContext.Provider>
+
+3.use the Context
+const {text, setText} = useContext(MyContext) 
+
+-------------------------------
+Memory Leakage
+causes:=
+component not unmounted
+Event listeners
+Subscription based APIs
+
+
+solutions:=
+momoization techniques
+pure component
+Virtualization techniques (render only visible items for list)
