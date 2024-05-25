@@ -436,7 +436,7 @@ console.log(typeof false);
 console.log(typeof [1, 2, 3]);
 console.log(typeof { name: "Kirtishil", age: 24 });
 console.log(new Date());
-console.log(function () {});
+console.log(function () { });
 console.log(typeof null);
 
 //arr
@@ -933,13 +933,25 @@ const uniqueArray = [];
 
 // Iterate over the combined array
 for (let i = 0; i < combined.length; i++) {
-    const value = combined[i];
-    if (!uniqueElements[value]) {
-        uniqueArray.push(value);
-        uniqueElements[value] = true;  // Mark this value as encountered
-    }
+  const value = combined[i];
+  if (!uniqueElements[value]) {
+    uniqueArray.push(value);
+    uniqueElements[value] = true;  // Mark this value as encountered
+  }
 }
 
 console.log(uniqueArray);
 
 ///////////////////////////
+
+arr = ['hello', 'kirtishil', 'hello', 'bye']
+occ = {}
+arr.forEach((item) => {
+  if (occ[item]) {
+    occ[item]++
+  } else {
+    occ[item] = 1
+  }
+})
+console.log(occ)
+//{hello:2, kirtishil:1, bye:1}

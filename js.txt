@@ -5,20 +5,15 @@ JavaScript is dynamically typed.
 This means the type of objects is checked during run-time. (In a statically typed language, the type is checked during compile-time.)
 
 How js works:
-first received by the js engine then inside js engine parser is used to check code for
-syntatic
-errors in line by line manner.
-After no error in code it creates the data structure called AST(Abstract
-Syntax
-Tree)
+first received by the js engine then inside js engine parser is used to check code for syntatic errors in line by line manner.
+After no error in code it creates the data structure called AST(Abstract Syntax Tree)
 Then js engine convert the js code into machine code. Last byte code get executed
 
-window is the first thing that gets loaded in the browser. The document object is page that will be loaded into
-    the browser. The document actually gets loaded inside window object.
+window is the first thing that gets loaded in the browser. The document object is page that will be loaded into the browser. The document actually gets loaded inside window object.
 window properties are:- document, history, screen, navigator, location
 
-    window object is used to display popup dialog box(alert,confirm,prompt,open,close)
-    history object is used to switch to history pages(back,forward,go(number))
+window object is used to display popup dialog box(alert,confirm,prompt,open,close)
+history object is used to switch to history pages(back,forward,go(number))
 
 
 Advantages of JS
@@ -57,8 +52,7 @@ false
 0n
 
 Difference between rest and spread:
-Rest parameter is used to take variable number of arguments and turns into an array while Spread
-operator takes an array or an object and spreads it.
+Rest parameter is used to take variable number of arguments and turns into an array while Spread operator takes an array or an object and spreads it.
 Rest parameter is used in function declaration whereas Spread operator is used in function call
 
 
@@ -68,17 +62,13 @@ var add = (a,b) => a+b;
 var mul = (a) => a*2;
 
 
-Javascript Hoisting : It is js default behavior of moving declarations to the top. Always declare
-    variables at the beginning of every scope
+Javascript Hoisting : It is js default behavior of moving declarations to the top. Always declare variables at the beginning of every scope
 
-Closure: It is an inner function. It can access the outer veriable of function. To use closure simply
-    define function inside another function and expose it.
+Closure: It is an inner function. It can access the outer veriable of function. To use closure simply define function inside another function and expose it.
 
-Anonymous function: without having any name and wont do anything on their own. These are generally use
-    along with  an event handler
+Anonymous function: without having any name and wont do anything on their own. These are generally use along with  an event handler
 
-Js Callback: function passed to some method as a argument or option. It is a function that is to be
-    executed after another function has finished executing
+Js Callback: function passed to some method as a argument or option. It is a function that is to be executed after another function has finished executing
 
 Promise
 A promise is an object that may produce value in the future.A promise is always in one of the possible states: fulfilled, rejected, or pending.
@@ -322,3 +312,53 @@ string.includes(substring)
 string.indexOf(substring) !== -1
 << true
 
+Async JS
+
+arr = [1,2]
+
+//callback
+getData(){
+	arr.map((e,i)=>{
+		console.log(e)
+	})
+}
+
+createData(e,callback){
+	arr.push(e)
+	callback();
+}
+createData(3,getData) 
+
+//promise
+createData(e){
+	return new Promise((resolve,reject)=>{
+		arr.push(e);
+		let error = false;
+		if(!error)
+			resolve();
+		else
+			reject('error');
+	})
+}
+createData(3).then(getData).catch(err => console.log(err)) 
+
+//async await
+async function start(){
+	await createData(3);
+	getData();
+}
+start();
+
+-----------------------------------------
+a = [],b = []
+a==b //false
+a===b //false
+//compare memory locations
+------------------------------------------
+a = [],b = a
+a==b //true
+a===b //true
+//points to same memory location
+-----------------------------------------
+ typeof NaN //number
+-----------------------------------------

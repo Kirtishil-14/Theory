@@ -1,0 +1,91 @@
+HTML (Hyper Text Markup Language)
+
+<!DOCTYPE html> == this is html document
+<html lang="en-US"> == root element of page
+<head> == meta info about page
+<title>tab title</title> == very imp for SEO
+</head>
+<body>
+Entire page
+</body>
+</html>
+
+-----------------------
+<strong> and <bold>
+both highlight text
+strong tag tells browser this is important and bold doesnot 
+
+<i> and <em>
+both make text italic
+em tag indicate it should read with more attention (improtance)
+----------------------
+
+Favicon = tab icon
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+--------------------
+Inline Elements
+An inline element does not start on a new line.
+An inline element only takes up as much width as necessary.
+<span> , <input> , <img>
+
+
+Block-level Elements
+A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.
+A block-level element always takes up the full width available (stretches out to the left and right as far as it can).
+<p> , <div> , <h1 -- h6>
+-------------------------
+
+<meta> tag (inside head)
+specify the character set, page description, keywords, author of the document, and viewport settings.
+
+-------------------------
+Semantic Elements in HTML
+clearly describes its meaning to both the browser and the developer.
+
+<header>,<footer>,<nav>,<section>,<form>,<table>
+
+-------------------------
+
+Web storage API
+localstorage = no expire
+sessionstorage = tab close then data loss
+
+-----------------------------
+
+CSS (Cascading Style Sheets)
+
+
+Pading: space between content and border of an element.
+Margin: space outside the border of an element.
+
+--------------------------
+selectors : CSS selectors are used to "find" (or select) the HTML elements you want to style.
+Simple selectors (select elements based on name, id, class)
+Combinator selectors (select elements based on a specific relationship between them)
+Pseudo-class selectors (select elements based on a certain state)
+Pseudo-elements selectors (select and style a part of an element)
+Attribute selectors (select elements based on an attribute or attribute value)
+
+Combinators : A combinator is something that explains the relationship between the selectors.
+descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~)
+
+Pseudo Classes :  pseudo-class is used to define a special state of an element.
+Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+ex = :active,:checked,:disabled,:link,:visited,:hover,:focus
+
+Pseudo Elements
+::after, ::before
+
+Attribute selector:
+input[type="text"] { color: red; }
+---------------------------------------
+Flex and Grid
+flex is used for single dimention layout 
+grid us used for two dimention layout (complex layout)
+
+-----------------------------------------
