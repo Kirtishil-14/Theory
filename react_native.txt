@@ -95,3 +95,7 @@ The recommended way is to use a single store for the entire application rather t
 which will violate the use of redux which only has a single store.
 
 
+Enable Hermes Engine: Enable Hermes JavaScript engine in your React Native app to improve JavaScript performance, reduce app startup time, and decrease memory usage, especially on Android devices.
+
+
+

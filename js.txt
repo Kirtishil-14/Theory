@@ -25,9 +25,9 @@ Advantages of JS
 
 
 Variable
-    var: Global Scope, updated and redeclare
-    let: Blocked scope, updated but not redeclare
-    const: Blocked scope, not updated and not redeclare
+    var: Global Scope, updated and redeclare, undefined 
+    let: Blocked scope, updated but not redeclare, reference error
+    const: Blocked scope, not updated and not redeclare, reference error
 
 
 Data Types
@@ -61,6 +61,8 @@ Arrow function : It can only be used as a function expression
 var add = (a,b) => a+b;
 var mul = (a) => a*2;
 
+Temporal Dead Zone: The time between the start of the block and the declaration of the variable where the variable cannot be accessed.
+ReferenceError: Attempting to access a variable in the TDZ results in a ReferenceError
 
 Javascript Hoisting : It is js default behavior of moving declarations to the top. Always declare variables at the beginning of every scope
 
@@ -145,29 +147,40 @@ The eval() function evaluates code inside a string.
 console.log(eval("5+10"));
 15
 
-In event bubbling an event starts by running the event handlers on the innermost element. Then it triggers the parents’ event handlers until it reaches the outermost element.
-
-event delegation is the technique, bubbling is what the event itself does, and capturing is a way of using event delgation on events that don't bubble.
 
 --------------------------------------------
-Event delegation is a technique for listening to events where you delegate a parent element as the listener for all of the events that happen inside it.
-var form = document.querySelector('#hogwarts-application');
 
-// Listen for changes to fields inside the form
-form.addEventListener('input', function (event) {
+Event Propagation
+Event propagation determines the order in which event handlers are called when an event occurs. It has three phases:
 
-	// Log the field that was changed
-	console.log(event.target);
+Capturing Phase: The event goes down to the target element.
+Target Phase: The event reaches the target element.
+Bubbling Phase: The event bubbles up from the target element.
 
-}, false);
+--------------------------------------------
 
-or
+Event Delegation
+Event delegation involves using a single event listener to manage events for multiple elements. This is efficient because you attach the event listener to a parent element rather than each child element.
 
-window.addEventListener('click', e => {
-  if (e.target.className === 'btn') console.log('Hello there!');
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<script>
+document.getElementById('list').addEventListener('click', (event) => {
+  if (event.target.tagName === 'LI') {
+    console.log(`Clicked on ${event.target.innerText}`);
+  }
 });
---------------------------------------
-event bubbling
+</script>
+
+---------------------------------------------
+
+Event Bubbling
+an event starts from the target element and then bubbles up to the outer elements, one by one, until it reaches the root of the document.
+
 <div onclick="show()">
 	a
 	<div onclick="show1()">
@@ -188,21 +201,32 @@ console.log(3)
 }
 You can stop bubbling by event.stopPropagation
 --------------------------------------
-Capturing is the exact opposite of bubbling, meaning that the outer event handlers are fired before the most specific handler (i.e. the one on the button). Note that all capturing event handlers are run first, then all the bubbling event handlers.
+Event Capturing
+It is the exact opposite of bubbling, meaning that the outer event handlers are fired before the most specific handler (i.e. the one on the button). Note that all capturing event handlers are run first, then all the bubbling event handlers.
 You can use event capturing by applying a third argument to EventTarget.addEventListener, setting it to true. For example:
-// Capture phase
-ancestors.forEach(a => {
-  a.addEventListener('click', e => {
-    console.log(`Hello from ${e.currentTarget}`);
-  }, true);
+
+<div id="outer" style="padding: 50px; background-color: lightblue;">
+  Outer
+  <div id="inner" style="padding: 50px; background-color: lightgreen;">
+    Inner
+  </div>
+</div>
+
+<script>
+document.getElementById('outer').addEventListener('click', () => {
+  console.log('Outer clicked - capturing');
+}, true); // true for capturing phase
+
+document.getElementById('inner').addEventListener('click', () => {
+  console.log('Inner clicked');
 });
+</script>
+
 ---------------------------------------
 Debounce vs. Throttle. 
-The major difference between debouncing and throttling is that debounce calls a function when a user hasn't carried out an event in a specific amount of time, 
-while throttle calls a function at intervals of a specified amount of time while the user is carrying out an event
+Debounce ensures that a function is executed only after a specified delay has passed since the last time it was invoked.
+Throttle ensures that a function is executed at most once every specified interval.
 
-Event capturing means propagation of event is done from ancestor elements to child element in the DOM while event bubbling means propagation is done from child element to ancestor elements in the DOM. 
-The event capturing occurs followed by event bubbling.
 ------------------------------------------------------------
 const map ={};
 const string = "Hello World";

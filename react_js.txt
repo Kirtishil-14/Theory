@@ -264,39 +264,6 @@ Difference between map and forEach
 The forEach() method does not create a new array based on the given array. The map() method creates an entirely new array. 
 The forEach() method returns “undefined“. The map() method returns the newly created array according to the provided callback function
 
---------------------
-
-The reduce method, which takes a function with two arguments(accumulator and item).We can also return the total number of all the array items using the reduce method
-const numbers = [1, 2, 3];
-const mySum = numbers.reduce((accumulator, num) => accumulator + num) // returns: 6.
-
-let staffs = [
-  { name: "Susan", age: 14, salary: 100 },
-  { name: "Daniel", age: 16, salary: 120 },
-  { name: "Bruno", age: 56, salary: 400 },
-  { name: "Jacob", age: 15, salary: 110 },
-  { name: "Sam", age: 64, salary: 500 },
-  { name: "Dave", age: 56, salary: 380 },
-  { name: "Neils", age: 65, salary: 540 }
-];
-
-const totalSalary = staffs.reduce((total, staff) => {
-  total += staff.salary;
-  return total;
-},0)
-console.log(totalSalary); // 2150
-
-const salaryInfo = staffs.reduce(
-  (total, staff) => {
-    let staffTithe = staff.salary * 0.1;
-    total.totalTithe += staffTithe;
-    total['totalSalary'] += staff.salary;
-    return total;
-  },
-  { totalSalary: 0, totalTithe: 0 }
-);
-
-console.log(salaryInfo); // { totalSalary: 2150 , totalTithe: 215 }
 ------------------------------------
 function holdTillResponse() {
   return new Promise(resolve => {
@@ -359,17 +326,50 @@ export const MyContext = createContext("")
 </MyContext.Provider>
 
 3.use the Context
-const {text, setText} = useContext(MyContext) 
-
--------------------------------
-Memory Leakage
-causes:=
-component not unmounted
-Event listeners
-Subscription based APIs
+const {text, setText} = useContext(MyContext)
 
 
-solutions:=
-momoization techniques
-pure component
-Virtualization techniques (render only visible items for list)
+----------------------------------
+HOC: 
+
+import React, { useState, useEffect } from 'react';
+
+const withLoading = (Component) => {
+  return function WithLoadingComponent(props) {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000); 
+      return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
+
+    return <Component {...props} />;
+  };
+};
+
+const DataComponent = () => {
+  return (
+    <div>
+      <h1>Data Loaded</h1>
+      <p>This is the data displayed after loading.</p>
+    </div>
+  );
+};
+
+const DataComponentWithLoading = withLoading(DataComponent);
+
+const App = () => {
+  return (
+    <div>
+      <DataComponentWithLoading />
+    </div>
+  );
+};
+
+export default App;
